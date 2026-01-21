@@ -7,15 +7,12 @@ import { GoNorthStar } from "react-icons/go";
 import { Link } from "react-router";
 import { IoMdArrowDropleft } from "react-icons/io";
 import { TbError404 } from "react-icons/tb";
-interface textType {
-  pattern: string;
-  secondary_text?: string;
-}
 
-const texts: textType[] = [
-  { pattern: "PAGE" },
-  { pattern: "NOT" },
-  { pattern: "FOUND" },
+
+const texts = [
+  { pattern: "PAGE", secondary_text: "-" },
+  { pattern: "NOT", secondary_text: "-" },
+  {pattern : "FOUND" , secondary_text : "-"}
 ];
 
 const ErrorPage404 = () => {
@@ -41,7 +38,6 @@ const ErrorPage404 = () => {
       
       <div className="scale-250 p-4 flex flex-col items-center">
          <MatrixDisplay texts={texts} duration={900} /> 
-        <p>Error page</p>
       </div>
 
       <div className="absolute bottom-10 text-sm text-white">
