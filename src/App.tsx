@@ -25,16 +25,24 @@ import CardCode from "./client/components/kernC/Card.tsx?raw"
 import ItemShowCase from "./client/components/kernC/ItemShowCase";
 import NavShowCase from "./client/components/kernC/NavBars/NavShowCase";
 import ButtonShowCase from "./client/components/kernC/Buttons/ButtonShowCase";
+import NavMenu from "./client/components/kernC/NavBars/NavMenu";
+
+// Navbar Components
+import NavBar1 from "./client/components/kernC/NavBars/NavBar1";
+import NavBar2 from "./client/components/kernC/NavBars/NavBar2";
+import NavBar3 from "./client/components/kernC/NavBars/NavBar3";
+import NavBar4 from "./client/components/kernC/NavBars/NavBar4";
+import NavBar5 from "./client/components/kernC/NavBars/NavBar5";
+
+// Navbar Code Imports (Added to support the showcase)
+import NavBar1Code from "./client/components/kernC/NavBars/NavBar1.tsx?raw";
+import NavBar2Code from "./client/components/kernC/NavBars/NavBar2.tsx?raw";
+import NavBar3Code from "./client/components/kernC/NavBars/NavBar3.tsx?raw";
+import NavBar4Code from "./client/components/kernC/NavBars/NavBar4.tsx?raw";
+import NavBar5Code from "./client/components/kernC/NavBars/NavBar5.tsx?raw";
 
 /**
  * Describes the nested routing for the `/components` path.
- *
- * @remarks
- * Under the main route (`/`), the `components` path renders `<ComponentPage />`.
- * Its children (`textarea`, `buttons`, `searchbar`, `avatar`, `spinner`, `navbars`, `card`)
- * render wherever `<ComponentPage />` exposes an `<Outlet />`, displaying each specific component.
- *
- * @see Router configuration for the complete route hierarchy and base path `/Kern`.
  */
 const router = createBrowserRouter(
   [
@@ -118,13 +126,59 @@ const router = createBrowserRouter(
         },
         {
           path: "components/navbars",
-          element: <NavShowCase
-            Component={<NavBars />}
-            para="Responsive navigation bar examples that adapt to mobile and desktop views."
-            heading="Navigation Bar"
-            requirements="Tailwind CSS for styling"
-            code={NavBarsCode.trim()}
-          />,
+          element: <NavMenu />,
+          children: [
+            {
+              path: "navbar1",
+              element: <NavShowCase 
+                Component={<NavBar1 />} 
+                code={NavBar1Code.trim()} 
+                heading="Navigation Bar 1" 
+                requirements="Tailwind CSS" 
+                para="A standard responsive navigation bar with logo and menu items."
+              />
+            },
+            {
+              path: "navbar2",
+              element: <NavShowCase 
+                Component={<NavBar2 />} 
+                code={NavBar2Code.trim()} 
+                heading="Navigation Bar 2" 
+                requirements="Tailwind CSS" 
+                para="Alternative navigation layout suitable for dashboards or specific app sections."
+              />
+            },
+            {
+              path: "navbar3",
+              element: <NavShowCase 
+                Component={<NavBar3 />} 
+                code={NavBar3Code.trim()} 
+                heading="Navigation Bar 3" 
+                requirements="Tailwind CSS" 
+                para="Minimalist navigation bar focusing on key actions."
+              />
+            },
+            {
+              path: "navbar4",
+              element: <NavShowCase 
+                Component={<NavBar4 />} 
+                code={NavBar4Code.trim()} 
+                heading="Navigation Bar 4" 
+                requirements="Tailwind CSS" 
+                para="Centered navigation layout with emphasized branding."
+              />
+            },
+            {
+              path: "navbar5",
+              element: <NavShowCase 
+                Component={<NavBar5 />} 
+                code={NavBar5Code.trim()} 
+                heading="Navigation Bar 5" 
+                requirements="Tailwind CSS" 
+                para="Feature-rich navigation bar with additional utility links or search."
+              />
+            },
+          ]
         },
         {
           path: "components/card",

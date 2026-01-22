@@ -4,7 +4,8 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useState } from "react";
 import Toast from "../Toast";
 
-interface ItemShowCaseProps {
+
+interface NavShowCaseProps {
   Component: React.ReactNode;
   para: string;
   heading: string;
@@ -12,13 +13,8 @@ interface ItemShowCaseProps {
   requirements: string;
 }
 
-const NavShowCase = ({
-  Component,
-  para = "None",
-  heading = "No heading",
-  code = "No Code",
-  requirements = "this is requirements",
-}: ItemShowCaseProps) => {
+
+const NavShowCase = ({Component , para="This is para test" , heading="This is test heading" , code="THis is test code" , requirements="These are test requirements"}:NavShowCaseProps) => {
 
   const [copy, setCopy] = useState(false);
 
@@ -33,12 +29,7 @@ const NavShowCase = ({
   };
 
   return (
-    <div className="h-fit max-w-5xl mx-auto p-10 flex flex-col gap-5 text-white  bg-gray-800 rounded-xl relative">
-      <div id="back" >
-        <button className="flex items-center gap-2 hover:bg-gray-50 w-fit cursor-pointer hover:text-black rounded-2xl p-2 transition-all duration-300 hover:scale-110"
-          onClick={() => navigate("/components")}
-        ><IoIosArrowBack /> Go Back</button>
-      </div>
+    <div className="h-fit min-w-5xl mx-auto p-10 flex flex-col gap-5 text-white  bg-gray-800 rounded-xl relative">
       <div id="aboutComponent" >
         <h3 className="text-2xl font-bold mb-3 tracking-tighter hover:underline hover:underline-offset-4 duration-300 cursor-pointer">
           {heading}
@@ -68,4 +59,5 @@ const NavShowCase = ({
   );
 };
 
-export default NavShowCase;
+export default NavShowCase
+
