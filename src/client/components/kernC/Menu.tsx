@@ -34,7 +34,7 @@ const links = [
 
 const Menu = () => {
   return (
-    <div className="h-150 w-full snap-center p-5 flex flex-col items-center sm:flex-row sm:flex-wrap sm:justify-center  gap-5 bg-gray-200 rounded-xl  ">
+    <div className="h-fit w-full snap-center p-5 flex flex-col items-center sm:flex-row sm:flex-wrap sm:justify-center  gap-5 bg-gray-200 rounded-xl  ">
     <h3 className="text-xl underline underline-offset-4 cursor-pointer p-5 m-5 text-center md:text-2xl">
       Menu of Components
     </h3>

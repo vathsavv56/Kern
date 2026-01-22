@@ -25,7 +25,7 @@ const ErrorPage404 = () => {
     }, 500);
 
     return () => clearInterval(interval);
-  }, [dot, now]);
+  },);
 
   return (
     <div className="font-jetMono min-h-screen w-full bg-black text-white relative flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6 md:px-8">

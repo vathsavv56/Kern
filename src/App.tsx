@@ -67,18 +67,18 @@ const router = createBrowserRouter(
         },
         {
           path: "components/textarea",
-          element: <ItemShowCase 
-            Component={<TextArea/>} 
-            para="This is a text area component that can be used for displaying text this is responsive and has good typography. This can be used for articles and any other places where u need text" 
-            heading="Text Area Component :" 
+          element: <ItemShowCase
+            Component={<TextArea />}
+            para="This is a text area component that can be used for displaying text this is responsive and has good typography. This can be used for articles and any other places where u need text"
+            heading="Text Area Component :"
             requirements="Fonts needed are JetBrains Mono (By jetbrains ),tailwind Css for styling "
             code={TextAreaCode.trim()}
           />,
         },
         {
           path: "components/buttons",
-          element: <ItemShowCase 
-            Component={<Buttons/>} 
+          element: <ItemShowCase
+            Component={<Buttons />}
             para="These are buttons that can be used for various actions and call-to-actions within the application."
             heading="React Buttons"
             requirements="Tailwindcss for styles"
@@ -87,7 +87,7 @@ const router = createBrowserRouter(
         },
         {
           path: "components/searchbar",
-          element: <ItemShowCase 
+          element: <ItemShowCase
             Component={<SearchBar />}
             para="A responsive search bar input field perfect for filtering lists or global site search functionality."
             heading="Search Bar Component"
@@ -97,7 +97,7 @@ const router = createBrowserRouter(
         },
         {
           path: "components/avatar",
-          element: <ItemShowCase 
+          element: <ItemShowCase
             Component={<Avatar />}
             para="A circular avatar component used to display user profile pictures or initials."
             heading="Avatar Component"
@@ -107,7 +107,7 @@ const router = createBrowserRouter(
         },
         {
           path: "components/spinner",
-          element: <ItemShowCase 
+          element: <ItemShowCase
             Component={<Spinner />}
             para="A visual indicator for loading states, useful for asynchronous data fetching or processing."
             heading="Loading Spinner"
@@ -117,7 +117,7 @@ const router = createBrowserRouter(
         },
         {
           path: "components/navbars",
-          element: <ItemShowCase 
+          element: <ItemShowCase
             Component={<NavBars />}
             para="Responsive navigation bar examples that adapt to mobile and desktop views."
             heading="Navigation Bar"
@@ -127,7 +127,7 @@ const router = createBrowserRouter(
         },
         {
           path: "components/card",
-          element: <ItemShowCase 
+          element: <ItemShowCase
             Component={<Card />}
             para="A card container meant for grouping related information like blog posts, product details, or profiles."
             heading="Card Component"
@@ -147,7 +147,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: "/Kern",
+    basename: import.meta.env.BASE_URL,
   },
 );
 
