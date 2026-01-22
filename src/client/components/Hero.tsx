@@ -51,7 +51,7 @@ const Header = () => {
       </h1>
       <p className="text-base sm:text-lg md:text-xl text-gray-600 font-medium max-w-2xl mx-auto">
         Build stunning user interfaces with elegantly designed components and
-        typography
+        hand picked fonts
       </p>
     </div>
   );

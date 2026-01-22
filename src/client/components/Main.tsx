@@ -8,6 +8,11 @@ const Main = () => {
       <div>
         <Outlet />
       </div>
+      <div className="max-w-5xl mx-auto h-10 bg-gray-400 rounded-xl mt-5 p-4">
+        <footer>
+          this is footer
+        </footer>
+      </div>
     </div>
   );
 };

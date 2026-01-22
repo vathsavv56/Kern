@@ -69,8 +69,8 @@ const Navbar = () => {
               key={item.to}
               className={({ isActive }) =>
                 cn(
-                  "text-black hover:text-gray-400 transition-colors",
-                  isActive && "text-red-500 font-medium",
+                  "text-black hover:text-orange-400 transition-colors",
+                  isActive && "text-orange-500 font-medium underline underline-offset-4 decoration-orange-500",
                 )
               }
             >
