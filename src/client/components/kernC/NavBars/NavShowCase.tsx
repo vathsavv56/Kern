@@ -2,7 +2,7 @@ import { MdCopyAll } from "react-icons/md";
 import { useNavigate } from "react-router";
 import { IoIosArrowBack } from "react-icons/io";
 import { useState } from "react";
-import Toast from "./Toast";
+import Toast from "../Toast";
 
 interface ItemShowCaseProps {
   Component: React.ReactNode;
@@ -12,7 +12,7 @@ interface ItemShowCaseProps {
   requirements: string;
 }
 
-const ItemShowCase = ({
+const NavShowCase = ({
   Component,
   para = "None",
   heading = "No heading",
@@ -68,4 +68,4 @@ const ItemShowCase = ({
   );
 };
 
-export default ItemShowCase;
+export default NavShowCase;

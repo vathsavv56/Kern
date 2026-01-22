@@ -23,7 +23,8 @@ import NavBarsCode from "./client/components/kernC/NavBars.tsx?raw"
 import Card from "./client/components/kernC/Card";
 import CardCode from "./client/components/kernC/Card.tsx?raw"
 import ItemShowCase from "./client/components/kernC/ItemShowCase";
-
+import NavShowCase from "./client/components/kernC/NavBars/NavShowCase";
+import ButtonShowCase from "./client/components/kernC/Buttons/ButtonShowCase";
 
 /**
  * Describes the nested routing for the `/components` path.
@@ -77,7 +78,7 @@ const router = createBrowserRouter(
         },
         {
           path: "components/buttons",
-          element: <ItemShowCase
+          element: <ButtonShowCase
             Component={<Buttons />}
             para="These are buttons that can be used for various actions and call-to-actions within the application."
             heading="React Buttons"
@@ -117,7 +118,7 @@ const router = createBrowserRouter(
         },
         {
           path: "components/navbars",
-          element: <ItemShowCase
+          element: <NavShowCase
             Component={<NavBars />}
             para="Responsive navigation bar examples that adapt to mobile and desktop views."
             heading="Navigation Bar"
