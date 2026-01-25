@@ -1,6 +1,6 @@
 import { MdCopyAll } from "react-icons/md";
-import { useNavigate } from "react-router";
-import { IoIosArrowBack } from "react-icons/io";
+// import { useNavigate } from "react-router";
+// import { IoIosArrowBack } from "react-icons/io";
 import { useState } from "react";
 import Toast from "../Toast";
 
@@ -18,7 +18,7 @@ const NavShowCase = ({Component , para="This is para test" , heading="This is te
 
   const [copy, setCopy] = useState(false);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
