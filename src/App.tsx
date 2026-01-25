@@ -19,7 +19,7 @@ import AvatarCode from "./client/components/kernC/Avatar.tsx?raw"
 import Spinner from "./client/components/kernC/Spinner";
 import SpinnerCode from "./client/components/kernC/Spinner.tsx?raw"
 import NavBars from "./client/components/kernC/NavBars";
-import NavBarsCode from "./client/components/kernC/NavBars.tsx?raw"
+// import NavBarsCode from "./client/components/kernC/NavBars.tsx?raw"
 import Card from "./client/components/kernC/Card";
 import CardCode from "./client/components/kernC/Card.tsx?raw"
 import ItemShowCase from "./client/components/kernC/ItemShowCase";

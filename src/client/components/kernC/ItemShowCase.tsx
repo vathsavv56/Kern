@@ -54,7 +54,7 @@ const ItemShowCase = ({
           {Component}
         </div>
 
-        <pre className="bg-pink-200 text-black p-3  rounded-lg w-full relative">
+        <pre className="bg-pink-200 text-black p-3  rounded-lg w-full relative md:text-lg sm:text-xl">
           <code>
             <MdCopyAll className="absolute right-7  text-2xl p-1 hover:bg-gray-50 hover:text-black hover:rounded-full cursor-pointer" onClick={handleCopy} />
             {code}
