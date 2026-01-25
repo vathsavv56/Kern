@@ -33,7 +33,7 @@ const ItemShowCase = ({
   };
 
   return (
-    <div className="h-fit max-w-5xl mx-auto p-10 flex flex-col gap-5 text-white  bg-gray-800 rounded-xl relative">
+    <div className="h-fit max-w-5xl mx-auto p-4 md:p-10 flex flex-col gap-5 text-white  bg-gray-800 rounded-xl relative">
       <div id="back" >
         <button className="flex items-center gap-2 hover:bg-gray-50 w-fit cursor-pointer hover:text-black rounded-2xl p-2 transition-all duration-300 hover:scale-110"
           onClick={() => navigate("/components")}
@@ -54,9 +54,9 @@ const ItemShowCase = ({
           {Component}
         </div>
 
-        <pre className="bg-pink-200 text-black p-3  rounded-lg w-full relative md:text-lg sm:text-xl">
+        <pre className="bg-pink-200 text-black p-3 rounded-lg w-full relative text-sm md:text-lg overflow-x-auto">
           <code>
-            <MdCopyAll className="absolute right-7  text-2xl p-1 hover:bg-gray-50 hover:text-black hover:rounded-full cursor-pointer" onClick={handleCopy} />
+            <MdCopyAll className="absolute right-7 top-3 text-2xl p-1 hover:bg-gray-50 hover:text-black hover:rounded-full cursor-pointer" onClick={handleCopy} />
             {code}
           </code>
         </pre>
