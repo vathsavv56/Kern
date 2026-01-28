@@ -30,7 +30,7 @@ export default function AuthLayout() {
       <div className="bg-white w-full md:max-w-5xl md:h-175 min-h-screen md:min-h-0 h-auto md:rounded-[40px] shadow-2xl overflow-hidden flex flex-col md:grid md:grid-cols-2 p-0 md:p-2 relative">
         
        
-        <div className="relative w-full md:h-full h-48 md:rounded-4xl rounded-b-4xl md:rounded-t-4xl overflow-hidden flex flex-col items-center justify-center md:justify-start text-white p-6 md:p-8 bg-gradient-to-b from-gray-900 via-[#8B2323] to-[#FF4500] shrink-0 transition-all duration-500 ease-in-out">
+        <div className="relative w-full md:h-full h-48 md:rounded-4xl rounded-b-4xl md:rounded-t-4xl overflow-hidden flex flex-col items-center justify-center md:justify-start text-white p-6 md:p-8 bg-linear-to-b from-gray-900 via-[#8B2323] to-[#FF4500] shrink-0 transition-all duration-500 ease-in-out">
            <div className="absolute inset-0 bg-black/10 mix-blend-overlay"></div>
            
            

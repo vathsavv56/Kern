@@ -10,9 +10,7 @@ import type { IconType } from "react-icons/lib";
 import { WiLightning } from "react-icons/wi";
 import { FaClock } from "react-icons/fa6";
 import { FaPen } from "react-icons/fa";
-// import Login from "./Login";
-// import LoginToast from "./LoginToast";
-import { useNavigate } from "react-router";
+
 
 const Hero = () => {
   
