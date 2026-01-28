@@ -127,7 +127,7 @@ const Navbar = () => {
               ))}
               <button
                 onClick={() => {
-                  navigate("/fonts");
+                  navigate("/login");
                   handleLinkClick();
                 }}
                 className="w-full mt-2 px-5 py-2 bg-orange-500/80 text-white rounded-full text-sm flex items-center justify-center group"
