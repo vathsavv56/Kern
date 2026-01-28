@@ -31,6 +31,7 @@ const Navbar = () => {
         <div className="mx-auto max-w-5xl w-full flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 font-poppins text-sm">
           <p className="text-gray-300 flex items-center gap-2 text-center">
             <FiFeather className="text-orange-400 shrink-0" />
+            
             <span>
               An API based font library —{" "}
               <span className="text-white font-medium">Open Source</span>
@@ -41,6 +42,7 @@ const Navbar = () => {
             >
               Learn More →
             </Link>
+            
           </p>
           <a
             href="https://github.com/vathsavv56/kern"
@@ -52,6 +54,9 @@ const Navbar = () => {
             <span>Star on GitHub</span>
           </a>
         </div>
+        <Link to="/logo" className="text-xs hover:underline hover:underline-offset-4 transition-all duration-300 cursor-pointer">
+            {" "} Logo Preview
+            </Link>
       </div>
 
       {/* Main Navigation */}
@@ -60,6 +65,7 @@ const Navbar = () => {
         <NavLink to="/" onClick={handleLinkClick}>
           <img src={Kern} alt="Kern Logo" className="rounded-2xl h-10 w-auto" />
         </NavLink>
+        
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-4">

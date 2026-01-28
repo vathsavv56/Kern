@@ -64,7 +64,7 @@ const Logo = () => {
   const current = themes[activeTheme];
 
   return (
-    <div className={`min-h-screen bg-slate-50 text-slate-900 font-sans ${current.selection} selection:text-white flex flex-col items-center justify-center p-6 relative overflow-hidden transition-colors duration-700`}>
+    <div className={`min-h-screen bg-slate-50 text-slate-900 font-sans ${current.selection} selection:text-white flex flex-col items-center justify-center p-6 relative overflow-hidden transition-colors duration-700 snap-center`}>
       
       {/* Dynamic Background Ambience */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
@@ -145,7 +145,7 @@ const Logo = () => {
           <button
             key={key}
             onClick={() => setActiveTheme(key)}
-            className={`w-6 h-6 rounded-full transition-all duration-300 relative group ${activeTheme === key ? 'scale-125 ring-2 ring-offset-2 ring-slate-300' : 'hover:scale-110'}`}
+            className={`w-6 h-6 rounded-full transition-all duration-300 relative group ${activeTheme === key ? 'scale-125 ring-2 ring-offset-2 ring-slate-300' : 'hover:scale-110'} hover:cursor-pointer`}
             style={{ background: `linear-gradient(135deg, ${themes[key].from}, ${themes[key].to})` }}
             aria-label={themes[key].label}
           >
@@ -156,9 +156,7 @@ const Logo = () => {
         ))}
       </div>
 
-      <footer className="absolute bottom-4 text-center text-slate-400 text-[10px] font-mono uppercase tracking-wider">
-        <p>SYS_ID: KERN_FINAL // {current.label.replace(' ', '_').toUpperCase()}</p>
-      </footer>
+      
     </div>
   );
 };
