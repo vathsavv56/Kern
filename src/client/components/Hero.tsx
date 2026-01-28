@@ -10,10 +10,14 @@ import type { IconType } from "react-icons/lib";
 import { WiLightning } from "react-icons/wi";
 import { FaClock } from "react-icons/fa6";
 import { FaPen } from "react-icons/fa";
+// import Login from "./Login";
+// import LoginToast from "./LoginToast";
+import { useNavigate } from "react-router";
 
 const Hero = () => {
+  
   return (
-    <div className="max-w-6xl mx-auto min-h-screen flex flex-col gap-16 text-center items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 pb-16 sm:pb-20">
+    <div className="max-w-6xl mx-auto min-h-screen flex flex-col gap-16 text-center items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 pb-16 sm:pb-20 ">
       <Cta />
       <Header />
       <Icons />

@@ -70,7 +70,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 cn(
                   "text-black hover:text-orange-400 transition-colors",
-                  isActive && "text-orange-500 font-medium underline underline-offset-4 decoration-orange-500",
+                  isActive &&
+                    "text-orange-500 font-medium underline underline-offset-4 decoration-orange-500",
                 )
               }
             >
@@ -78,10 +79,19 @@ const Navbar = () => {
             </NavLink>
           ))}
           <button
-            onClick={() => navigate("/fonts")}
-            className="px-5 py-2 bg-orange-500/80 text-white rounded-full text-sm cursor-pointer ml-5 flex items-center group hover:scale-110 transition-transform duration-200"
+            onClick={() => navigate("/login")}
+            className={cn(
+              "relative flex items-center ml-5 px-5 py-2 rounded-full",
+              "bg-orange-500/80 text-white text-sm group",
+              "cursor-pointer transition-transform duration-200 hover:scale-105",
+              "before:content-['Optional'] before:absolute before:top-full before:mt-2 before:left-1/2 before:-translate-x-1/2",
+              "before:px-3 before:py-1 before:rounded-lg before:bg-black before:text-white before:text-xs",
+              "before:opacity-0 before:scale-95 before:transition-all before:duration-200 before:pointer-events-none",
+              "hover:before:opacity-100 hover:before:scale-100",
+            )}
           >
-            Explore <FiArrowUpRight className="ml-1 group-hover:text-xl" />
+            Login{" "}
+            <FiArrowUpRight className="ml-1 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </button>
         </div>
 
@@ -122,7 +132,7 @@ const Navbar = () => {
                 }}
                 className="w-full mt-2 px-5 py-2 bg-orange-500/80 text-white rounded-full text-sm flex items-center justify-center group"
               >
-                Explore <FiArrowUpRight className="ml-1" />
+                Login <FiArrowUpRight className="ml-1" />
               </button>
             </div>
           </div>

@@ -1,7 +1,9 @@
 
 const FontPage = () => {
   return (
-    <div>FontPage</div>
+    <div>
+      
+    </div>
   )
 }
 
