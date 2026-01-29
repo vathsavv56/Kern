@@ -223,13 +223,14 @@ const router = createBrowserRouter(
       ],
     },
     {
+      path: "login",
+      element: <Login />,
+    },
+    {
       path: "*",
       element: <ErrorPage404 />,
     },
-    {
-      path: "login",
-      element: <Login />,
-    }
+    
   ],
   {
     basename: import.meta.env.BASE_URL,

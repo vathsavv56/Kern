@@ -13,7 +13,7 @@ interface NavLinkItem {
 const navItems: NavLinkItem[] = [
   { to: "/fonts", name: "Fonts" },
   { to: "/components", name: "Components" },
-  { to: "/docs", name: "Docs" },
+  { to: "/docs", name: "Usage" },
 ];
 
 const Navbar = () => {
@@ -54,9 +54,7 @@ const Navbar = () => {
             <span>Star on GitHub</span>
           </a>
         </div>
-        <Link to="/logo" className="text-xs hover:underline hover:underline-offset-4 transition-all duration-300 cursor-pointer">
-            {" "} Logo Preview
-            </Link>
+        
       </div>
 
       {/* Main Navigation */}
