@@ -1,49 +1,116 @@
-import { Link } from "react-router"; // Assuming react-router v7 or v6
-import { IoIosArrowForward } from "react-icons/io";
+import { Link } from "react-router";
+import {
+  IoIosArrowForward,
+  IoMdText,
+  IoMdRadioButtonOn,
+  IoMdSearch,
+  IoMdPerson,
+  IoMdSync,
+  IoMdMenu,
+  IoMdCard,
+} from "react-icons/io";
 
 const links = [
-  { name: "TextArea", to: "textarea" },
-  { name: "Buttons", to: "buttons" },
-  { name: "SearchBar", to: "searchbar" },
-  { name: "Avatar", to: "avatar" },
-  { name: "Spinner", to: "spinner" },
-  { name: "NavBars", to: "navbars" },
-  { name: "Card", to: "card" },
+  {
+    name: "TextArea",
+    to: "textarea",
+    description: "Multi-line text input components",
+    icon: IoMdText,
+  },
+  {
+    name: "Buttons",
+    to: "buttons",
+    description: "Primary, secondary & icon buttons",
+    icon: IoMdRadioButtonOn,
+  },
+  {
+    name: "SearchBar",
+    to: "searchbar",
+    description: "Search inputs with suggestions",
+    icon: IoMdSearch,
+  },
+  {
+    name: "Avatar",
+    to: "avatar",
+    description: "User profile & image components",
+    icon: IoMdPerson,
+  },
+  {
+    name: "Spinner",
+    to: "spinner",
+    description: "Loading & progress indicators",
+    icon: IoMdSync,
+  },
+  {
+    name: "NavBars",
+    to: "navbars",
+    description: "Navigation menus & headers",
+    icon: IoMdMenu,
+  },
+  {
+    name: "Card",
+    to: "card",
+    description: "Content containers & layouts",
+    icon: IoMdCard,
+  },
 ];
 
 const Menu = () => {
   return (
-    <section className="flex min-h-[60vh] w-full justify-center bg-gray-50 px-4 py-12">
-      <div className="w-full max-w-4xl">
+    <section className="relative flex min-h-scren w-full justify-center bg-linear-to-b from-gray-50 to-white px-4 py-16">
+      <div className="w-full max-w-5xl">
         
-        <div className="mb-10 text-center">
-          <h3 className="mb-2 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
-            Component Menu
+        {/* Header */}
+        <div className="mb-14 text-center">
+          <h3 className="mb-3 text-4xl font-extrabold tracking-tight text-gray-900">
+            Component Library
           </h3>
-          <p className="text-gray-500">
-            Explore the available UI elements.
+          <p className="mx-auto max-w-xl text-gray-500">
+            Browse and preview reusable UI components crafted for speed,
+            consistency, and scalability.
           </p>
         </div>
 
-        
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
-          {links.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className="group relative flex items-center justify-between rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-100"
-            >
-              
-              <span className="font-semibold text-gray-700 transition-colors group-hover:text-gray-600">
-                {link.name}
-              </span>
+        {/* Grid */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+          {links.map((link) => {
+            const Icon = link.icon;
 
-              
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 text-gray-400 transition-all duration-300 group-hover:bg-indigo-50 group-hover:text-indigo-600">
-                <IoIosArrowForward className="text-xl transition-transform duration-300 group-hover:translate-x-0.5" />
-              </div>
-            </Link>
-          ))}
+            return (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300
+                           hover:-translate-y-1 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-100
+                           focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              >
+                {/* Accent bar */}
+                <span className="absolute left-0 top-0 h-full w-1 bg-indigo-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                <div className="flex items-start justify-between">
+                  <div className="flex gap-4">
+                    {/* Icon */}
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition-colors group-hover:bg-indigo-100">
+                      <Icon className="text-xl" />
+                    </div>
+
+                    {/* Text */}
+                    <div>
+                      <h4 className="font-semibold text-gray-800">
+                        {link.name}
+                      </h4>
+                      <p className="mt-1 text-sm text-gray-500">
+                        {link.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Arrow */}
+                  <IoIosArrowForward className="mt-1 text-lg text-gray-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-indigo-600" />
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -185,23 +185,23 @@ export default function Login() {
                 )}
               </div>
 
-              <div className="flex flex-col gap-4 pt-2">
+              {/* <div className="flex flex-col gap-4 pt-2">
                 {isLogin && (
                   <div className="flex justify-end">
                     <button
                       type="button"
-                      className="text-sm font-bold text-gray-900 hover:underline"
+                      className="text-sm font-bold text-gray-900 hover:underline cursor-pointer"
                     >
                       Forgot Password?
                     </button>
                   </div>
                 )}
-              </div>
+              </div> */}
 
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-black text-white rounded-full py-4 font-bold text-lg hover:bg-gray-800 transition-transform active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center shadow-lg shadow-black/20"
+                className="w-full bg-black text-white rounded-full py-4 font-bold text-lg hover:bg-gray-800 transition-transform active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center shadow-lg shadow-black/20 cursor-pointer"
               >
                 {isLoading ? (
                   <span className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
@@ -223,33 +223,13 @@ export default function Login() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 pb-4 md:pb-0">
+             <div className="w-full h-15 flex items-center justify-center border border-gray-200 rounded-4xl hover:bg-gray-800 font-medium font-jetMono bg-black text-white cursor-pointer">
                 <button
-                  type="button"
-                  className="flex items-center justify-center gap-2 border border-gray-200 rounded-full py-3 hover:bg-gray-50 hover:border-gray-300 transition-all group"
+                onClick={()=>navigate("/components")}
                 >
-                  <img
-                    src="https://www.svgrepo.com/show/475656/google-color.svg"
-                    alt="Google"
-                    className="w-5 h-5 group-hover:scale-110 transition-transform"
-                  />
-                  <span className="text-sm font-bold text-gray-600">
-                    Google
-                  </span>
+                  Start Exploring 
                 </button>
-                <button
-                  type="button"
-                  className="flex items-center justify-center gap-2 border border-gray-200 rounded-full py-3 hover:bg-gray-50 hover:border-gray-300 transition-all group"
-                >
-                  <Github
-                    size={20}
-                    className="text-gray-900 group-hover:scale-110 transition-transform"
-                  />
-                  <span className="text-sm font-bold text-gray-600">
-                    GitHub
-                  </span>
-                </button>
-              </div>
+             </div>
             </div>
           </form>
         </div>
