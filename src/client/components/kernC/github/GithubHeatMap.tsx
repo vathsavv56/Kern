@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Loader2, AlertCircle, Github } from 'lucide-react';
+import {  AlertCircle, Github } from 'lucide-react';
 
 // Interface for a single day's contribution data
 interface Contribution {

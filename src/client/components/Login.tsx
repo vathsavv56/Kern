@@ -8,7 +8,7 @@ import {
   Mail,
   Lock,
   CheckCircle2,
-  Github,
+
 } from "lucide-react";
 
 import { useNavigate } from "react-router";
