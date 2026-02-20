@@ -10,8 +10,19 @@ import ComponentPage from "./client/components/ComponentPage";
 import FontPage from "./client/components/FontPage";
 import TextArea from "./client/components/kernC/TextArea";
 import TextAreaCode from "./client/components/kernC/TextArea.tsx?raw";
-import Buttons from "./client/components/kernC/Buttons";
-import ButtonCode from "./client/components/kernC/Buttons.tsx?raw";
+import ButtonMenu from "./client/components/kernC/Buttons/ButtonMenu";
+
+import Button1 from "./client/components/kernC/Buttons/Button1";
+import Button2 from "./client/components/kernC/Buttons/Button2";
+import Button3 from "./client/components/kernC/Buttons/Button3";
+import Button4 from "./client/components/kernC/Buttons/Button4";
+import Button5 from "./client/components/kernC/Buttons/Button5";
+
+import Button1Code from "./client/components/kernC/Buttons/Button1.tsx?raw";
+import Button2Code from "./client/components/kernC/Buttons/Button2.tsx?raw";
+import Button3Code from "./client/components/kernC/Buttons/Button3.tsx?raw";
+import Button4Code from "./client/components/kernC/Buttons/Button4.tsx?raw";
+import Button5Code from "./client/components/kernC/Buttons/Button5.tsx?raw";
 import SearchBar from "./client/components/kernC/SearchBar";
 import SearchBarCode from "./client/components/kernC/SearchBar.tsx?raw";
 import Avatar from "./client/components/kernC/Avatar";
@@ -86,15 +97,69 @@ const router = createBrowserRouter(
         },
         {
           path: "components/buttons",
-          element: (
-            <ButtonShowCase
-              Component={<Buttons />}
-              para="These are buttons that can be used for various actions and call-to-actions within the application."
-              heading="React Buttons"
-              requirements="Tailwindcss for styles"
-              code={ButtonCode.trim()}
-            />
-          ),
+          element: <ButtonMenu />,
+          children: [
+            {
+              path: "basic",
+              element: (
+                <ButtonShowCase
+                  Component={<Button1 />}
+                  code={Button1Code.trim()}
+                  heading="Basic Buttons"
+                  requirements="Tailwind CSS"
+                  para="Primary, secondary, ghost, danger, and disabled button variants."
+                />
+              ),
+            },
+            {
+              path: "icon",
+              element: (
+                <ButtonShowCase
+                  Component={<Button2 />}
+                  code={Button2Code.trim()}
+                  heading="Icon Buttons"
+                  requirements="Tailwind CSS, react-icons"
+                  para="Buttons with leading icons and icon-only action buttons."
+                />
+              ),
+            },
+            {
+              path: "social",
+              element: (
+                <ButtonShowCase
+                  Component={<Button3 />}
+                  code={Button3Code.trim()}
+                  heading="Social / Auth Buttons"
+                  requirements="Tailwind CSS, react-icons"
+                  para="OAuth and email sign-up buttons with brand colors and dividers."
+                />
+              ),
+            },
+            {
+              path: "sizes",
+              element: (
+                <ButtonShowCase
+                  Component={<Button4 />}
+                  code={Button4Code.trim()}
+                  heading="Button Sizes"
+                  requirements="Tailwind CSS"
+                  para="Small, medium, large, and full-width button sizing options."
+                />
+              ),
+            },
+            {
+              path: "animated",
+              element: (
+                <ButtonShowCase
+                  Component={<Button5 />}
+                  code={Button5Code.trim()}
+                  heading="Animated Buttons"
+                  requirements="Tailwind CSS, react-icons"
+                  para="Interactive buttons with loading states, scale effects, and hover-fill animations."
+                />
+              ),
+            },
+          ],
         },
         {
           path: "components/searchbar",
@@ -230,7 +295,7 @@ const router = createBrowserRouter(
       path: "*",
       element: <ErrorPage404 />,
     },
-    
+
   ],
   {
     basename: import.meta.env.BASE_URL,

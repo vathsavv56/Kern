@@ -1,10 +1,8 @@
 import { MdCopyAll } from "react-icons/md";
-import { useNavigate } from "react-router";
-import { IoIosArrowBack } from "react-icons/io";
 import { useState } from "react";
 import Toast from "../Toast";
 
-interface ItemShowCaseProps {
+interface ButtonShowCaseProps {
   Component: React.ReactNode;
   para: string;
   heading: string;
@@ -14,15 +12,12 @@ interface ItemShowCaseProps {
 
 const ButtonShowCase = ({
   Component,
-  para = "None",
-  heading = "No heading",
-  code = "No Code",
-  requirements = "this is requirements",
-}: ItemShowCaseProps) => {
-
+  para = "This is para test",
+  heading = "This is test heading",
+  code = "This is test code",
+  requirements = "These are test requirements",
+}: ButtonShowCaseProps) => {
   const [copy, setCopy] = useState(false);
-
-  const navigate = useNavigate();
 
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
@@ -33,35 +28,33 @@ const ButtonShowCase = ({
   };
 
   return (
-    <div className="h-fit max-w-5xl mx-auto p-10 flex flex-col gap-5 text-white  bg-gray-800 rounded-xl relative">
-      <div id="back" >
-        <button className="flex items-center gap-2 hover:bg-gray-50 w-fit cursor-pointer hover:text-black rounded-2xl p-2 transition-all duration-300 hover:scale-110"
-          onClick={() => navigate("/components")}
-        ><IoIosArrowBack /> Go Back</button>
-      </div>
-      <div id="aboutComponent" >
-        <h3 className="text-2xl font-bold mb-3 tracking-tighter hover:underline hover:underline-offset-4 duration-300 cursor-pointer">
+    <div className="h-fit w-full max-w-5xl mx-auto p-4 sm:p-6 md:p-10 flex flex-col gap-4 sm:gap-5 text-white bg-gray-800 rounded-xl relative overflow-hidden">
+      <div>
+        <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 tracking-tighter hover:underline hover:underline-offset-4 duration-300 cursor-pointer">
           {heading}
         </h3>
-        <div className="w-full">
-          <p className="mb-3 tracking-tighter ">{para}</p>
+        <p className="mb-2 sm:mb-3 tracking-tighter text-sm sm:text-base">{para}</p>
+        <div className="mb-3">
+          <h3 className="hover:underline hover:underline-offset-4 w-fit cursor-pointer text-sm sm:text-base">
+            Requirements :
+          </h3>
+          <p className="text-sm sm:text-base">{requirements}</p>
         </div>
-        <div className="w-full">
-          <h3 className="hover:underline hover:underline-offset-4 w-fit cursor-pointer">Requirements : </h3>
-          <p>{requirements}</p>
-        </div>
-        <div id="showComponent" className="border border-orange-500 m-5">
+        <div className="overflow-x-auto rounded-lg bg-white">
           {Component}
         </div>
 
-        <pre className="bg-pink-200 text-black p-3  rounded-lg w-full relative">
+        <pre className="bg-pink-200 text-black p-3 rounded-lg w-full relative overflow-x-auto text-xs sm:text-sm mt-4">
           <code>
-            <MdCopyAll className="absolute right-7  text-2xl p-1 hover:bg-gray-50 hover:text-black hover:rounded-full cursor-pointer" onClick={handleCopy} />
+            <MdCopyAll
+              className="absolute right-3 top-3 text-2xl p-1 hover:bg-gray-50 hover:text-black hover:rounded-full cursor-pointer"
+              onClick={handleCopy}
+            />
             {code}
           </code>
         </pre>
       </div>
-      <div id="alert" className="absolute top-10 left-10">
+      <div className="fixed bottom-4 left-4 z-50">
         {copy && <Toast status={true} message="Copied succesfully" />}
       </div>
     </div>
