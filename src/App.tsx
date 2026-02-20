@@ -88,9 +88,9 @@ const router = createBrowserRouter(
           element: (
             <ItemShowCase
               Component={<TextArea />}
-              para="This is a text area component that can be used for displaying text this is responsive and has good typography. This can be used for articles and any other places where u need text"
-              heading="Text Area Component :"
-              requirements="Fonts needed are JetBrains Mono (By jetbrains ),tailwind Css for styling "
+              para="A controlled textarea input with live character counter (500 max), placeholder text, and a clear button that activates when content is present. Features smooth focus transitions from gray to white background with a subtle ring effect."
+              heading="Text Area"
+              requirements="React (useState), Tailwind CSS"
               code={TextAreaCode.trim()}
             />
           ),
@@ -166,9 +166,9 @@ const router = createBrowserRouter(
           element: (
             <ItemShowCase
               Component={<SearchBar />}
-              para="A responsive search bar input field perfect for filtering lists or global site search functionality."
-              heading="Search Bar Component"
-              requirements="Tailwind CSS for styling"
+              para="An interactive search input with a leading search icon, clear button on input, and a live-filtering dropdown that matches against a suggestion list. Includes hint text and smooth focus transitions. Try typing 'dash' or 'set' to see the dropdown."
+              heading="Search Bar"
+              requirements="React (useState), Tailwind CSS, react-icons (HiSearch, HiX)"
               code={SearchBarCode.trim()}
             />
           ),
@@ -178,9 +178,9 @@ const router = createBrowserRouter(
           element: (
             <ItemShowCase
               Component={<Avatar />}
-              para="A circular avatar component used to display user profile pictures or initials."
-              heading="Avatar Component"
-              requirements="Tailwind CSS for styling"
+              para="A showcase of avatar variants across three categories: image-based avatars in four sizes (SM, MD, LG, XL), initial-based avatars with dark backgrounds, and status indicators (online, away, offline, busy) with colored dots. All feature ring borders with hover effects."
+              heading="Avatar"
+              requirements="Tailwind CSS, an image asset for the profile picture"
               code={AvatarCode.trim()}
             />
           ),
@@ -190,9 +190,9 @@ const router = createBrowserRouter(
           element: (
             <ItemShowCase
               Component={<Spinner />}
-              para="A visual indicator for loading states, useful for asynchronous data fetching or processing."
-              heading="Loading Spinner"
-              requirements="Tailwind CSS for styling"
+              para="A collection of loading spinners in three showcase groups: four animation variants (ring spin, bouncing dots, pulse, dual ring), three sizes (SM, MD, LG), and four color options (blue, green, amber, red). All animations use pure CSS via Tailwind utilities — no JavaScript required."
+              heading="Loading Spinners"
+              requirements="Tailwind CSS (animate-spin, animate-bounce, animate-pulse)"
               code={SpinnerCode.trim()}
             />
           ),
@@ -207,9 +207,9 @@ const router = createBrowserRouter(
                 <NavShowCase
                   Component={<NavBar1 />}
                   code={NavBar1Code.trim()}
-                  heading="Navigation Bar 1"
-                  requirements="Tailwind CSS"
-                  para="A standard responsive navigation bar with logo and menu items."
+                  heading="Classic Horizontal"
+                  requirements="React (useState), Tailwind CSS, react-icons (HiMenu, HiX)"
+                  para="A clean white navbar with logo on the left, nav links in the center, and a CTA button on the right. Links feature animated underline on hover. Responsive hamburger menu slides links down on mobile."
                 />
               ),
             },
@@ -219,9 +219,9 @@ const router = createBrowserRouter(
                 <NavShowCase
                   Component={<NavBar2 />}
                   code={NavBar2Code.trim()}
-                  heading="Navigation Bar 2"
-                  requirements="Tailwind CSS"
-                  para="Alternative navigation layout suitable for dashboards or specific app sections."
+                  heading="Centered Logo"
+                  requirements="React (useState), Tailwind CSS, react-icons (HiMenu, HiX)"
+                  para="A dark-themed navbar with the logo centered and nav links split evenly on the left and right sides. Features an amber accent border on the bottom. Links collapse into a stacked list on mobile."
                 />
               ),
             },
@@ -231,9 +231,9 @@ const router = createBrowserRouter(
                 <NavShowCase
                   Component={<NavBar3 />}
                   code={NavBar3Code.trim()}
-                  heading="Navigation Bar 3"
-                  requirements="Tailwind CSS"
-                  para="Minimalist navigation bar focusing on key actions."
+                  heading="Glassmorphism"
+                  requirements="React (useState), Tailwind CSS (backdrop-blur), react-icons (HiMenu, HiX)"
+                  para="A floating navbar with a semi-transparent background and backdrop blur effect. Rounded pill shape with gradient CTA button and violet-to-cyan accents. Links use pill-shaped hover backgrounds. Collapses into a dropdown on mobile."
                 />
               ),
             },
@@ -243,9 +243,9 @@ const router = createBrowserRouter(
                 <NavShowCase
                   Component={<NavBar4 />}
                   code={NavBar4Code.trim()}
-                  heading="Navigation Bar 4"
-                  requirements="Tailwind CSS"
-                  para="Centered navigation layout with emphasized branding."
+                  heading="Minimal Monochrome"
+                  requirements="React (useState), Tailwind CSS, react-icons (HiMenu, HiX)"
+                  para="An ultra-clean white navbar with wide-tracked uppercase logo, underline-style active link indicator, and search/menu text actions separated by a divider. Uses a monochrome black and white color scheme throughout."
                 />
               ),
             },
@@ -255,9 +255,9 @@ const router = createBrowserRouter(
                 <NavShowCase
                   Component={<NavBar5 />}
                   code={NavBar5Code.trim()}
-                  heading="Navigation Bar 5"
-                  requirements="Tailwind CSS"
-                  para="Feature-rich navigation bar with additional utility links or search."
+                  heading="Dashboard Nav"
+                  requirements="React (useState), Tailwind CSS, react-icons (HiMenu, HiX, FiUser, FiBell)"
+                  para="A dark dashboard-style navbar with a gradient logo icon, segmented pill navigation (active tab highlighted), notification bell with green indicator dot, and a profile button with a violet avatar icon. Full mobile menu includes all actions."
                 />
               ),
             },
@@ -268,9 +268,9 @@ const router = createBrowserRouter(
           element: (
             <ItemShowCase
               Component={<Card />}
-              para="A card container meant for grouping related information like blog posts, product details, or profiles."
-              heading="Card Component"
-              requirements="Tailwind CSS for styling"
+              para="Three card variants: a basic card with gradient header area, a horizontal profile card with avatar and follow button, and a rich interactive card with a heart/save overlay, category tag, read time, author row, and share/more action buttons. All feature hover shadow transitions."
+              heading="Cards"
+              requirements="Tailwind CSS, react-icons (FiHeart, FiShare2, FiMoreHorizontal), an image asset"
               code={CardCode.trim()}
             />
           ),
