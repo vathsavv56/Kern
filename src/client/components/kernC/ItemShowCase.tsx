@@ -52,7 +52,7 @@ const ItemShowCase = ({
           <h3 className="hover:underline hover:underline-offset-4 w-fit cursor-pointer">Requirements : </h3>
           <p>{requirements}</p>
         </div>
-        <div id="showComponent" className="border border-orange-500 m-5">
+        <div id="showComponent" className="">
           {Component}
         </div>
 
