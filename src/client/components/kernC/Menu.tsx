@@ -8,6 +8,8 @@ import {
   IoMdSync,
   IoMdMenu,
   IoMdCard,
+  IoMdLogIn,
+  IoLogoGithub,
 } from "react-icons/io";
 
 const links = [
@@ -52,6 +54,18 @@ const links = [
     to: "card",
     description: "Content containers",
     icon: IoMdCard,
+  },
+  {
+    name: "Auth Forms",
+    to: "login",
+    description: "Login interfaces",
+    icon: IoMdLogIn,
+  },
+  {
+    name: "Heatmap",
+    to: "github",
+    description: "Contribution charts",
+    icon: IoLogoGithub,
   },
 ];
 

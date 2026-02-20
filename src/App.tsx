@@ -52,6 +52,9 @@ import NavBar5Code from "./client/components/kernC/NavBars/NavBar5.tsx?raw";
 
 
 import Login from "./client/components/Login";
+import LoginCode from "./client/components/Login.tsx?raw";
+import GithubHeatMap from "./client/components/kernC/github/GithubHeatMap";
+import GithubHeatMapCode from "./client/components/kernC/github/GithubHeatMap.tsx?raw";
 
 const router = createBrowserRouter(
   [
@@ -276,14 +279,34 @@ const router = createBrowserRouter(
           ),
         },
         {
+          path: "components/login",
+          element: (
+            <ItemShowCase
+              Component={<Login />}
+              para="A beautiful, interactive authentication form with a split-pane design, input validation features, and smooth transition animations between 'Log in' and 'Sign up' states."
+              heading="Authentication Form"
+              requirements="React (useState), Tailwind CSS, lucide-react"
+              code={LoginCode.trim()}
+            />
+          ),
+        },
+        {
+          path: "components/github",
+          element: (
+            <ItemShowCase
+              Component={<GithubHeatMap username="vathsavv56" />}
+              para="An interactive Github contribution heatmap component built without external graph libraries. Fetches live contribution data, features color-scaled intensity blocks, responsive tooltips, and a loading skeleton."
+              heading="Github Heatmap"
+              requirements="React (useState, useEffect), Tailwind CSS, lucide-react"
+              code={GithubHeatMapCode.trim()}
+            />
+          ),
+        },
+        {
           path: "fonts",
           element: <FontPage />,
         },
       ],
-    },
-    {
-      path: "login",
-      element: <Login />,
     },
     {
       path: "*",
