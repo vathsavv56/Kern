@@ -40,7 +40,7 @@ const NavShowCase = ({
           </h3>
           <p className="text-sm sm:text-base">{requirements}</p>
         </div>
-        <div className="border border-orange-500 overflow-x-auto rounded-lg">
+        <div className="overflow-x-auto rounded-lg">
           {Component}
         </div>
 
