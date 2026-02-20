@@ -6,7 +6,7 @@ Kern UI is fully integrated with a **Custom Shadcn Registry**, allowing you to s
 
 ![Kern UI Preview](https://kern-sigma.vercel.app/vite.svg)
 
-## 🌟 Features
+##  Features
 
 - **Beautiful Design:** Built with modern aesthetics, glassmorphism, smooth gradients, and elegant typography.
 - **Zero Configuration:** No complex setups. Components are copy-paste ready or instantly installable via CLI.
@@ -17,7 +17,7 @@ Kern UI is fully integrated with a **Custom Shadcn Registry**, allowing you to s
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 There are two primary ways to add Kern UI components to your project.
 
@@ -43,7 +43,7 @@ npm install tailwindcss react-icons lucide-react
 
 ---
 
-## 🧩 Available Components
+##  Available Components
 
 Kern UI provides over 20 tailored web components:
 
@@ -63,7 +63,7 @@ If you want to contribute to the UI library or preview the components locally:
 
 1. **Clone the repository:**
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/vathsavv56/Kern
 cd Kern-Frontend
 ```
 
@@ -95,7 +95,7 @@ bun run build:registry
 
 ---
 
-## 🤝 Requirements
+##  Requirements
 
 - **React:** v19+
 - **Tailwind CSS:** v4.1+
