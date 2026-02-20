@@ -1,73 +1,72 @@
-# React + TypeScript + Vite
+# Kern
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Kern is a React UI component library and resource website that provides beautifully designed, copy-paste-ready components and hand-picked fonts for your React projects.
 
-Currently, two official plugins are available:
+## What is Kern?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Kern gives you a curated set of UI building blocks — from buttons and navigation bars to avatars and spinners — all styled with Tailwind CSS and written in TypeScript. Browse the live showcase, copy the source code for any component, and drop it straight into your project.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Ready-to-use components** — Browse and copy source code for each component directly from the UI.
+- **Font explorer** — Discover and preview hand-picked fonts for your next project.
+- **Built for React** — All components are written in TypeScript and target React 19.
+- **Tailwind CSS styling** — Every component is styled exclusively with Tailwind CSS for easy customisation.
+- **Fast & lightweight** — Powered by Vite for instant dev-server startup and optimised production builds.
 
-## Expanding the ESLint configuration
+## Available Components
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Component | Description |
+|-----------|-------------|
+| **TextArea** | Responsive text area with good typography, suitable for articles and long-form content |
+| **Buttons** | A collection of button variants for actions and call-to-actions |
+| **SearchBar** | Responsive search input for filtering lists or site-wide search |
+| **Avatar** | Circular avatar for user profile pictures or initials |
+| **Spinner** | Loading indicator for async data fetching or processing |
+| **NavBars** | Five navigation bar layouts (standard, dashboard, minimal, centred, feature-rich) |
+| **Card** | Container for grouping related content such as blog posts or product details |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- [React 19](https://react.dev/) with [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) — build tool & dev server
+- [Tailwind CSS v4](https://tailwindcss.com/) — utility-first styling
+- [React Router v7](https://reactrouter.com/) — client-side routing
+- [TanStack Query](https://tanstack.com/query) — async state management
+- [Motion](https://motion.dev/) — animations
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview the production build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── App.tsx                  # Route definitions
+├── main.tsx                 # Application entry point
+└── client/
+    ├── assets/              # Static assets
+    ├── cn.ts                # Class name utility
+    └── components/
+        ├── Hero.tsx         # Landing page hero section
+        ├── ComponentPage.tsx# Component browser
+        ├── FontPage.tsx     # Font browser
+        └── kernC/           # Individual UI components
+```
+
+## Author
+
+Built by [@vathsavv56](https://github.com/vathsavv56).
