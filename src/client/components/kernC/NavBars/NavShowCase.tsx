@@ -8,6 +8,7 @@ interface NavShowCaseProps {
   heading: string;
   code: string;
   requirements: string;
+  cliCommand?: string;
 }
 
 const NavShowCase = ({
@@ -16,6 +17,7 @@ const NavShowCase = ({
   heading = "This is test heading",
   code = "This is test code",
   requirements = "These are test requirements",
+  cliCommand
 }: NavShowCaseProps) => {
   const [copy, setCopy] = useState(false);
 
@@ -44,7 +46,27 @@ const NavShowCase = ({
           {Component}
         </div>
 
-        <pre className="bg-pink-200 text-black p-3 rounded-lg w-full relative overflow-x-auto text-xs sm:text-sm mt-4">
+        {cliCommand && (
+          <div className="mt-5 mb-2">
+            <h3 className="hover:underline hover:underline-offset-4 w-fit cursor-pointer mb-2 text-sm sm:text-base">CLI Installation : </h3>
+            <pre className="bg-gray-900 text-green-400 p-3 rounded-lg w-full relative overflow-x-auto text-xs sm:text-sm border border-gray-700">
+              <code>
+                <MdCopyAll
+                  className="absolute right-3 top-3 text-2xl p-1 hover:bg-gray-700 hover:text-white hover:rounded-full cursor-pointer transition-colors"
+                  onClick={() => {
+                    navigator.clipboard.writeText(cliCommand);
+                    setCopy(true);
+                    setTimeout(() => setCopy(false), 3000);
+                  }}
+                />
+                {cliCommand}
+              </code>
+            </pre>
+          </div>
+        )}
+
+        <h3 className="hover:underline hover:underline-offset-4 w-fit cursor-pointer mt-4 mb-2 text-sm sm:text-base">Component Code : </h3>
+        <pre className="bg-pink-200 text-black p-3 rounded-lg w-full relative overflow-x-auto text-xs sm:text-sm">
           <code>
             <MdCopyAll
               className="absolute right-3 top-3 text-2xl p-1 hover:bg-gray-50 hover:text-black hover:rounded-full cursor-pointer"

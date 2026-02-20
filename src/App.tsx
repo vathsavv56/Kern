@@ -95,6 +95,7 @@ const router = createBrowserRouter(
               heading="Text Area"
               requirements="React (useState), Tailwind CSS"
               code={TextAreaCode.trim()}
+              cliCommand="npx shadcn@latest add https://kern-sigma.vercel.app/r/textarea.json"
             />
           ),
         },
@@ -111,6 +112,7 @@ const router = createBrowserRouter(
                   heading="Basic Buttons"
                   requirements="Tailwind CSS"
                   para="Primary, secondary, ghost, danger, and disabled button variants."
+                  cliCommand="npx shadcn@latest add https://kern-sigma.vercel.app/r/button1.json"
                 />
               ),
             },
@@ -123,6 +125,7 @@ const router = createBrowserRouter(
                   heading="Icon Buttons"
                   requirements="Tailwind CSS, react-icons"
                   para="Buttons with leading icons and icon-only action buttons."
+                  cliCommand="npx shadcn@latest add https://kern-sigma.vercel.app/r/button2.json"
                 />
               ),
             },
@@ -135,6 +138,7 @@ const router = createBrowserRouter(
                   heading="Social / Auth Buttons"
                   requirements="Tailwind CSS, react-icons"
                   para="OAuth and email sign-up buttons with brand colors and dividers."
+                  cliCommand="npx shadcn@latest add https://kern-sigma.vercel.app/r/button3.json"
                 />
               ),
             },
@@ -147,6 +151,7 @@ const router = createBrowserRouter(
                   heading="Button Sizes"
                   requirements="Tailwind CSS"
                   para="Small, medium, large, and full-width button sizing options."
+                  cliCommand="npx shadcn@latest add https://kern-sigma.vercel.app/r/button4.json"
                 />
               ),
             },
@@ -159,6 +164,7 @@ const router = createBrowserRouter(
                   heading="Animated Buttons"
                   requirements="Tailwind CSS, react-icons"
                   para="Interactive buttons with loading states, scale effects, and hover-fill animations."
+                  cliCommand="npx shadcn@latest add https://kern-sigma.vercel.app/r/button5.json"
                 />
               ),
             },
@@ -173,6 +179,7 @@ const router = createBrowserRouter(
               heading="Search Bar"
               requirements="React (useState), Tailwind CSS, react-icons (HiSearch, HiX)"
               code={SearchBarCode.trim()}
+              cliCommand="npx shadcn@latest add https://kern-sigma.vercel.app/r/searchbar.json"
             />
           ),
         },
@@ -185,6 +192,7 @@ const router = createBrowserRouter(
               heading="Avatar"
               requirements="Tailwind CSS, an image asset for the profile picture"
               code={AvatarCode.trim()}
+              cliCommand="npx shadcn@latest add https://kern-sigma.vercel.app/r/avatar.json"
             />
           ),
         },
@@ -197,6 +205,7 @@ const router = createBrowserRouter(
               heading="Loading Spinners"
               requirements="Tailwind CSS (animate-spin, animate-bounce, animate-pulse)"
               code={SpinnerCode.trim()}
+              cliCommand="npx shadcn@latest add https://kern-sigma.vercel.app/r/spinner.json"
             />
           ),
         },
@@ -213,6 +222,7 @@ const router = createBrowserRouter(
                   heading="Classic Horizontal"
                   requirements="React (useState), Tailwind CSS, react-icons (HiMenu, HiX)"
                   para="A clean white navbar with logo on the left, nav links in the center, and a CTA button on the right. Links feature animated underline on hover. Responsive hamburger menu slides links down on mobile."
+                  cliCommand="npx shadcn@latest add https://kern-sigma.vercel.app/r/navbar1.json"
                 />
               ),
             },
@@ -225,6 +235,7 @@ const router = createBrowserRouter(
                   heading="Centered Logo"
                   requirements="React (useState), Tailwind CSS, react-icons (HiMenu, HiX)"
                   para="A dark-themed navbar with the logo centered and nav links split evenly on the left and right sides. Features an amber accent border on the bottom. Links collapse into a stacked list on mobile."
+                  cliCommand="npx shadcn@latest add https://kern-sigma.vercel.app/r/navbar2.json"
                 />
               ),
             },
@@ -237,6 +248,7 @@ const router = createBrowserRouter(
                   heading="Glassmorphism"
                   requirements="React (useState), Tailwind CSS (backdrop-blur), react-icons (HiMenu, HiX)"
                   para="A floating navbar with a semi-transparent background and backdrop blur effect. Rounded pill shape with gradient CTA button and violet-to-cyan accents. Links use pill-shaped hover backgrounds. Collapses into a dropdown on mobile."
+                  cliCommand="npx shadcn@latest add https://kern-sigma.vercel.app/r/navbar3.json"
                 />
               ),
             },
@@ -249,6 +261,7 @@ const router = createBrowserRouter(
                   heading="Minimal Monochrome"
                   requirements="React (useState), Tailwind CSS, react-icons (HiMenu, HiX)"
                   para="An ultra-clean white navbar with wide-tracked uppercase logo, underline-style active link indicator, and search/menu text actions separated by a divider. Uses a monochrome black and white color scheme throughout."
+                  cliCommand="npx shadcn@latest add https://kern-sigma.vercel.app/r/navbar4.json"
                 />
               ),
             },
@@ -261,6 +274,7 @@ const router = createBrowserRouter(
                   heading="Dashboard Nav"
                   requirements="React (useState), Tailwind CSS, react-icons (HiMenu, HiX, FiUser, FiBell)"
                   para="A dark dashboard-style navbar with a gradient logo icon, segmented pill navigation (active tab highlighted), notification bell with green indicator dot, and a profile button with a violet avatar icon. Full mobile menu includes all actions."
+                  cliCommand="npx shadcn@latest add https://kern-sigma.vercel.app/r/navbar5.json"
                 />
               ),
             },
@@ -275,6 +289,7 @@ const router = createBrowserRouter(
               heading="Cards"
               requirements="Tailwind CSS, react-icons (FiHeart, FiShare2, FiMoreHorizontal), an image asset"
               code={CardCode.trim()}
+              cliCommand="npx shadcn@latest add https://kern-sigma.vercel.app/r/card.json"
             />
           ),
         },
@@ -299,6 +314,7 @@ const router = createBrowserRouter(
               heading="Github Heatmap"
               requirements="React (useState, useEffect), Tailwind CSS, lucide-react"
               code={GithubHeatMapCode.trim()}
+              cliCommand="npx shadcn@latest add https://kern-sigma.vercel.app/r/githubheatmap.json"
             />
           ),
         },

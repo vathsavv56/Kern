@@ -15,8 +15,25 @@ const Docs = () => {
           </h2>
           <div className="bg-gray-50 rounded-xl p-4 sm:p-6 flex flex-col gap-4">
             <div>
+              <p className="text-sm text-gray-600 mb-2 font-semibold">
+                Option 1: CLI Installation (Recommended)
+              </p>
               <p className="text-sm text-gray-600 mb-2">
-                1. Install the required dependencies in your React project:
+                We provide a custom Shadcn registry. You can install any component directly using the Shadcn CLI:
+              </p>
+              <pre className="bg-gray-900 text-green-400 text-xs sm:text-sm p-3 rounded-lg overflow-x-auto">
+                <code>npx shadcn@latest add https://kern-sigma.vercel.app/r/[component-name].json</code>
+              </pre>
+              <p className="text-xs text-gray-500 mt-2">
+                * Each component page has its exact CLI command ready to copy.
+              </p>
+            </div>
+            <div className="border-t border-gray-200 my-2 pt-4">
+              <p className="text-sm text-gray-600 mb-2 font-semibold">
+                Option 2: Manual Installation
+              </p>
+              <p className="text-sm text-gray-600 mb-2">
+                1. Install the required dependencies:
               </p>
               <pre className="bg-gray-900 text-green-400 text-xs sm:text-sm p-3 rounded-lg overflow-x-auto">
                 <code>npm install tailwindcss react-icons lucide-react</code>
@@ -24,8 +41,7 @@ const Docs = () => {
             </div>
             <div>
               <p className="text-sm text-gray-600 mb-2">
-                2. Copy the component code from any component page and paste it
-                into your project.
+                2. Copy the component code from any component page and paste it into your project.
               </p>
             </div>
             <div>
