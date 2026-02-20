@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { HiSearch } from "react-icons/hi";
 
 const fonts = [
-  // Sans Serif
   "Inter", "Roboto", "Open Sans", "Lato", "Montserrat",
   "Poppins", "Raleway", "Nunito", "Source Sans 3", "PT Sans",
   "Outfit", "Work Sans", "DM Sans", "Rubik", "Manrope",
@@ -11,18 +10,14 @@ const fonts = [
   "Lexend", "Geist", "Noto Sans", "Ubuntu", "Urbanist",
   "Nunito Sans", "Exo 2", "Overpass", "Questrial", "Comfortaa",
   "Signika", "Catamaran", "Hind", "Asap", "Sarabun",
-  // Serif
   "Playfair Display", "Merriweather", "Libre Baskerville", "Crimson Text",
   "EB Garamond", "Cormorant Garamond", "Bitter", "Arvo",
   "Lora", "Noto Serif", "Vollkorn", "Spectral", "Cardo",
   "Libre Caslon Text", "Domine", "Literata",
-  // Monospace
   "Inconsolata", "Source Code Pro", "JetBrains Mono", "Fira Code", "Space Mono",
   "IBM Plex Mono", "Roboto Mono", "Ubuntu Mono", "Anonymous Pro", "Courier Prime",
-  // Display
   "Oswald", "Anton", "Bebas Neue", "Righteous", "Archivo Black",
   "Alfa Slab One", "Passion One", "Bungee", "Permanent Marker", "Lobster",
-  // Handwriting
   "Pacifico", "Dancing Script", "Caveat", "Satisfy", "Great Vibes",
   "Sacramento", "Kalam", "Indie Flower", "Patrick Hand", "Shadows Into Light",
 ];
