@@ -50,7 +50,7 @@ import NavBar3Code from "./client/components/kernC/NavBars/NavBar3.tsx?raw";
 import NavBar4Code from "./client/components/kernC/NavBars/NavBar4.tsx?raw";
 import NavBar5Code from "./client/components/kernC/NavBars/NavBar5.tsx?raw";
 
-import FontDemo from "./client/components/kernC/Fonts/FontDemo";
+
 import Login from "./client/components/Login";
 
 const router = createBrowserRouter(
@@ -278,12 +278,6 @@ const router = createBrowserRouter(
         {
           path: "fonts",
           element: <FontPage />,
-          children: [
-            {
-              path: ":fid",
-              element: <FontDemo />,
-            },
-          ],
         },
       ],
     },
