@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router";
 import { HiSearch } from "react-icons/hi";
 
 const fonts = [
@@ -73,7 +74,7 @@ function loadFont(name: string) {
   document.head.appendChild(link);
 }
 
-function FontCard({ name, text, size }: { name: string; text: string; size: number }) {
+function FontCard({ name, text, size, onClick }: { name: string; text: string; size: number; onClick?: () => void }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(loadedFonts.has(name));
 
@@ -95,7 +96,11 @@ function FontCard({ name, text, size }: { name: string; text: string; size: numb
   }, [name]);
 
   return (
-    <div ref={ref} className="py-6 border-b border-gray-100 last:border-0">
+    <div
+      ref={ref}
+      onClick={onClick}
+      className="py-6 px-4 -mx-4 border-b border-gray-100 last:border-0 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+    >
       <div className="flex items-baseline justify-between mb-2">
         <p className="text-[11px] font-medium text-gray-900">{name}</p>
         <span className="text-[10px] text-gray-300 capitalize">{tags[name]}</span>
@@ -119,6 +124,7 @@ const FontPage = () => {
   const [size, setSize] = useState(28);
   const [filter, setFilter] = useState("all");
   const [search, setSearch] = useState("");
+  const navigate = useNavigate();
 
   const visible = fonts.filter((f) => {
     if (filter !== "all" && tags[f] !== filter) return false;
@@ -197,7 +203,7 @@ const FontPage = () => {
 
       <div className="flex flex-col">
         {visible.map((name) => (
-          <FontCard key={name} name={name} text={text || "The quick brown fox"} size={size} />
+          <FontCard key={name} name={name} text={text || "The quick brown fox"} size={size} onClick={() => navigate(`/fonts/${encodeURIComponent(name)}`)} />
         ))}
       </div>
 

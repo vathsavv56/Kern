@@ -8,6 +8,7 @@ import Hero from "./client/components/Hero";
 import Logo from "./client/components/Logo";
 import ComponentPage from "./client/components/ComponentPage";
 import FontPage from "./client/components/FontPage";
+import FontDetailPage from "./client/components/FontDetailPage";
 import TextArea from "./client/components/kernC/TextArea";
 import TextAreaCode from "./client/components/kernC/TextArea.tsx?raw";
 import ButtonMenu from "./client/components/kernC/Buttons/ButtonMenu";
@@ -319,6 +320,10 @@ const router = createBrowserRouter(
         {
           path: "fonts",
           element: <FontPage />,
+        },
+        {
+          path: "fonts/:fontName",
+          element: <FontDetailPage />,
         },
       ],
     },
