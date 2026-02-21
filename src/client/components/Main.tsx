@@ -1,4 +1,5 @@
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 import { Outlet } from "react-router";
 
 const Main = () => {
@@ -8,7 +9,8 @@ const Main = () => {
       <div>
         <Outlet />
       </div>
-        {/* <div className="fixed left-0 bottom-0 w-full bg-red-500 z-10">
+      <Footer />
+      {/* <div className="fixed left-0 bottom-0 w-full bg-red-500 z-10">
           <footer>
             this is a footer
           </footer>
