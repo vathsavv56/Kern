@@ -63,85 +63,94 @@ const FontDetailPage = () => {
 
     if (!decodedName) {
         return (
-            <div className="w-full max-w-4xl mx-auto px-4 py-20 text-center text-gray-400">
-                Font not found.
+            <div className="w-full max-w-5xl mx-auto px-4 py-20 text-center">
+                <p className="text-gray-400 text-lg font-poppins">Font not found.</p>
             </div>
         );
     }
 
     return (
-        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-14">
-            {/* Header */}
+        <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-14">
+            {/* Back button */}
             <button
                 onClick={() => navigate("/fonts")}
-                className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-gray-900 transition-colors mb-6 cursor-pointer group"
+                className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-gray-900 transition-colors mb-8 cursor-pointer group"
             >
                 <IoIosArrowBack className="text-base group-hover:-translate-x-0.5 transition-transform" />
                 Back to fonts
             </button>
 
-            <div className="mb-10">
+            {/* Hero */}
+            <div className="mb-10 sm:mb-14">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 border border-gray-200 mb-5">
+                    <span className="w-2 h-2 rounded-full bg-gray-900" />
+                    <span className="text-[10px] font-bold text-gray-900 tracking-widest uppercase font-jetMono">
+                        Font Preview
+                    </span>
+                </div>
                 <h1
-                    className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-2 transition-opacity duration-500"
+                    className="text-4xl sm:text-6xl font-bold font-poppins tracking-tight text-gray-900 mb-3 transition-opacity duration-500"
                     style={{
                         fontFamily: loaded ? `'${decodedName}', sans-serif` : "inherit",
-                        opacity: loaded ? 1 : 0.3,
+                        opacity: loaded ? 1 : 0.2,
                     }}
                 >
                     {decodedName}
                 </h1>
-                <p className="text-sm text-gray-400">
+                <p className="text-gray-400 text-sm font-jetMono">
                     {weights.length} weights · normal & italic · Google Fonts
                 </p>
             </div>
 
-            {/* Custom preview text */}
-            <div className="mb-10 sticky top-0 z-20 pt-2 pb-4">
-                <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+            {/* Preview input */}
+            <div className="mb-10 sm:mb-14 sticky top-0 z-20 pt-2 pb-4">
+                <div className="bg-white rounded-3xl p-5 border border-gray-200 shadow-sm">
                     <input
                         type="text"
-                        placeholder="Type to preview..."
+                        placeholder="Type anything to preview…"
                         value={previewText}
                         onChange={(e) => setPreviewText(e.target.value)}
-                        className="w-full bg-transparent border-none outline-none text-lg text-gray-900 placeholder:text-gray-300"
+                        className="w-full bg-transparent border-none outline-none text-lg text-gray-900 placeholder:text-gray-300 font-poppins"
                     />
                 </div>
             </div>
 
-            {/* Size showcase */}
-            <section className="mb-12">
-                <h2 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-5">
-                    Size Scale
-                </h2>
-                <div className="flex flex-col gap-4">
-                    {sampleSizes.map(({ px, label }) => (
-                        <div key={px} className="flex items-baseline gap-4">
-                            <span className="text-[10px] text-gray-300 w-14 shrink-0 tabular-nums text-right">
-                                {px}px · {label}
-                            </span>
-                            <p
-                                className="text-gray-800 truncate transition-opacity duration-500"
-                                style={{
-                                    fontFamily: loaded
-                                        ? `'${decodedName}', sans-serif`
-                                        : "inherit",
-                                    fontSize: `${px}px`,
-                                    opacity: loaded ? 1 : 0.15,
-                                }}
-                            >
-                                {previewText || "The quick brown fox"}
-                            </p>
-                        </div>
-                    ))}
+            {/* Size scale */}
+            <section className="mb-14">
+                <div className="bg-white rounded-3xl border border-gray-200 shadow-sm p-6 sm:p-8">
+                    <span className="text-[10px] font-semibold text-gray-400 tracking-widest uppercase font-jetMono">
+                        Size Scale
+                    </span>
+                    <div className="flex flex-col gap-6 mt-6">
+                        {sampleSizes.map(({ px, label }) => (
+                            <div key={px} className="flex items-baseline gap-5">
+                                <span className="text-[10px] text-gray-300 w-16 shrink-0 tabular-nums text-right font-jetMono">
+                                    {px}px · {label}
+                                </span>
+                                <p
+                                    className="text-gray-800 truncate transition-opacity duration-500"
+                                    style={{
+                                        fontFamily: loaded
+                                            ? `'${decodedName}', sans-serif`
+                                            : "inherit",
+                                        fontSize: `${px}px`,
+                                        opacity: loaded ? 1 : 0.12,
+                                    }}
+                                >
+                                    {previewText || "The quick brown fox"}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 
             {/* Weight variations */}
             <section>
-                <h2 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-6">
+                <span className="text-[10px] font-semibold text-gray-400 tracking-widest uppercase font-jetMono mb-6 block px-1">
                     Weight Variations
-                </h2>
-                <div className="flex flex-col gap-3">
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {weights.map(({ value, label }) =>
                         [false, true].map((italic) => {
                             const key = `${value}-${italic ? "italic" : "normal"}`;
@@ -151,24 +160,24 @@ const FontDetailPage = () => {
                             return (
                                 <div
                                     key={key}
-                                    className="group relative border border-gray-100 rounded-xl p-5 hover:border-gray-200 hover:shadow-sm transition-all"
+                                    className="group bg-white border border-gray-200 rounded-3xl p-5 sm:p-6 shadow-sm hover:shadow-md transition-all duration-300 relative"
                                 >
                                     {/* Copy button */}
                                     <button
                                         onClick={() => handleCopy(key, snippet)}
-                                        className={`absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-medium transition-all cursor-pointer ${isCopied
+                                        className={`absolute top-4 right-4 flex items-center gap-1.5 px-2.5 py-1 rounded-xl text-[10px] font-semibold transition-all cursor-pointer ${isCopied
                                                 ? "bg-green-50 text-green-600 border border-green-200"
                                                 : "bg-gray-50 text-gray-400 border border-gray-100 opacity-0 group-hover:opacity-100 hover:bg-gray-100 hover:text-gray-700"
                                             }`}
                                     >
                                         {isCopied ? (
                                             <>
-                                                <MdCheck className="text-sm" />
+                                                <MdCheck className="text-xs" />
                                                 Copied!
                                             </>
                                         ) : (
                                             <>
-                                                <MdContentCopy className="text-sm" />
+                                                <MdContentCopy className="text-xs" />
                                                 Copy CSS
                                             </>
                                         )}
@@ -180,7 +189,7 @@ const FontDetailPage = () => {
                                             {label} {value}
                                         </span>
                                         {italic && (
-                                            <span className="text-[10px] text-gray-400 italic">
+                                            <span className="px-2 py-0.5 rounded-md bg-gray-50 border border-gray-100 text-[10px] font-jetMono text-gray-500 italic">
                                                 Italic
                                             </span>
                                         )}
@@ -188,21 +197,21 @@ const FontDetailPage = () => {
 
                                     {/* Preview */}
                                     <p
-                                        className="text-2xl text-gray-800 leading-relaxed truncate transition-opacity duration-500"
+                                        className="text-xl sm:text-2xl text-gray-800 leading-relaxed truncate transition-opacity duration-500"
                                         style={{
                                             fontFamily: loaded
                                                 ? `'${decodedName}', sans-serif`
                                                 : "inherit",
                                             fontWeight: value,
                                             fontStyle: italic ? "italic" : "normal",
-                                            opacity: loaded ? 1 : 0.15,
+                                            opacity: loaded ? 1 : 0.12,
                                         }}
                                     >
                                         {previewText || "The quick brown fox"}
                                     </p>
 
-                                    {/* Snippet preview */}
-                                    <pre className="mt-3 text-[10px] text-gray-300 font-mono leading-relaxed overflow-x-auto hidden group-hover:block">
+                                    {/* Snippet — visible on hover */}
+                                    <pre className="mt-3 text-[9px] text-gray-300 font-jetMono leading-relaxed overflow-x-auto hidden group-hover:block">
                                         {snippet}
                                     </pre>
                                 </div>

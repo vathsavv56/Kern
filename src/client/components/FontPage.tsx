@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
-import { HiSearch } from "react-icons/hi";
+import { HiSearch, HiX } from "react-icons/hi";
+import { IoChevronForward } from "react-icons/io5";
 
 const fonts = [
   "Inter", "Roboto", "Open Sans", "Lato", "Montserrat",
@@ -74,7 +75,11 @@ function loadFont(name: string) {
   document.head.appendChild(link);
 }
 
-function FontCard({ name, text, size, onClick }: { name: string; text: string; size: number; onClick?: () => void }) {
+function FontCard({
+  name, text, size, onClick,
+}: {
+  name: string; text: string; size: number; onClick?: () => void;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(loadedFonts.has(name));
 
@@ -95,18 +100,30 @@ function FontCard({ name, text, size, onClick }: { name: string; text: string; s
     return () => obs.disconnect();
   }, [name]);
 
+  const tag = tags[name];
+
   return (
     <div
       ref={ref}
       onClick={onClick}
-      className="py-6 px-4 -mx-4 border-b border-gray-100 last:border-0 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+      className="group bg-white border border-gray-200 rounded-3xl p-6 sm:p-7 cursor-pointer shadow-sm hover:shadow-md transition-all duration-300"
     >
-      <div className="flex items-baseline justify-between mb-2">
-        <p className="text-[11px] font-medium text-gray-900">{name}</p>
-        <span className="text-[10px] text-gray-300 capitalize">{tags[name]}</span>
+      {/* Top row */}
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-2.5">
+          <h3 className="text-sm font-semibold text-gray-900 tracking-tight">
+            {name}
+          </h3>
+          <span className="px-2 py-0.5 rounded-md bg-gray-50 border border-gray-100 text-[10px] font-jetMono text-gray-500 capitalize">
+            {filterLabels[tag] || tag}
+          </span>
+        </div>
+        <IoChevronForward className="text-gray-300 group-hover:text-gray-600 group-hover:translate-x-0.5 transition-all duration-300 text-sm" />
       </div>
+
+      {/* Font preview */}
       <p
-        className="text-gray-800 leading-relaxed transition-opacity duration-500 truncate"
+        className="text-gray-800 leading-relaxed truncate transition-opacity duration-500"
         style={{
           fontFamily: visible ? `'${name}', sans-serif` : "inherit",
           fontSize: `${size}px`,
@@ -132,63 +149,95 @@ const FontPage = () => {
     return true;
   });
 
-  return (
-    <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
-      <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">
-        Fonts
-      </h1>
-      <p className="text-gray-400 text-sm mt-1 mb-8">
-        {fonts.length} typefaces · lazy loaded
-      </p>
+  const categoryCounts = fonts.reduce((acc, f) => {
+    const t = tags[f];
+    acc[t] = (acc[t] || 0) + 1;
+    return acc;
+  }, {} as Record<string, number>);
 
-      <div className="sticky top-0 z-20 pt-2 pb-4">
-        <div className="bg-gray-50 rounded-2xl p-4 sm:p-5 flex flex-col gap-4 border border-gray-100">
+  return (
+    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+      {/* Header */}
+      <div className="text-center mb-10 sm:mb-14">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 border border-gray-200 mb-6">
+          <span className="w-2 h-2 rounded-full bg-gray-900" />
+          <span className="text-[10px] font-bold text-gray-900 tracking-widest uppercase font-jetMono">
+            Typography
+          </span>
+        </div>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-poppins tracking-tight mb-4 bg-linear-to-r from-gray-900 via-gray-800 to-gray-600 bg-clip-text text-transparent">
+          Explore Fonts
+        </h1>
+        <p className="text-gray-500 text-base sm:text-lg max-w-xl mx-auto font-medium">
+          {fonts.length} hand-picked typefaces, lazy-loaded and ready to preview
+        </p>
+      </div>
+
+      {/* Controls card */}
+      <div className="sticky top-0 z-20 pt-2 pb-5">
+        <div className="bg-white rounded-3xl p-5 sm:p-6 border border-gray-200 shadow-sm">
+          {/* Preview text area */}
           <textarea
             value={text}
             onChange={(e) => setText(e.target.value)}
-            placeholder="Type to preview..."
+            placeholder="Type anything to preview…"
             rows={2}
-            className="w-full px-0 py-0 text-lg sm:text-xl text-gray-900 bg-transparent border-none outline-none resize-none placeholder:text-gray-300 leading-relaxed"
+            className="w-full px-0 py-0 text-lg sm:text-xl text-gray-900 bg-transparent border-none outline-none resize-none placeholder:text-gray-300 leading-relaxed font-poppins"
           />
 
-          <div className="flex items-center justify-between gap-3 flex-wrap border-t border-gray-200 pt-3">
-            <div className="flex gap-1 flex-wrap">
+          <div className="flex items-center justify-between gap-3 flex-wrap border-t border-gray-100 pt-4 mt-2">
+            {/* Filter pills */}
+            <div className="flex gap-1.5 flex-wrap">
               {Object.entries(filterLabels).map(([key, label]) => (
                 <button
                   key={key}
                   onClick={() => setFilter(key)}
-                  className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition-all cursor-pointer ${filter === key
-                    ? "bg-gray-900 text-white"
-                    : "text-gray-400 hover:text-gray-700 hover:bg-gray-200"
+                  className={`px-3 py-1.5 rounded-xl text-[11px] font-semibold transition-all duration-200 cursor-pointer ${filter === key
+                      ? "bg-gray-900 text-white shadow-sm"
+                      : "text-gray-400 hover:text-gray-700 hover:bg-gray-100"
                     }`}
                 >
                   {label}
+                  {key !== "all" && (
+                    <span className={`ml-1 text-[9px] font-jetMono ${filter === key ? "text-gray-400" : "text-gray-300"}`}>
+                      {categoryCounts[key] || 0}
+                    </span>
+                  )}
                 </button>
               ))}
             </div>
 
-            <div className="flex items-center gap-3">
+            {/* Search + size */}
+            <div className="flex items-center gap-4">
               <div className="relative">
-                <HiSearch className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-300 text-[10px]" />
+                <HiSearch className="absolute left-2.5 top-1/2 -translate-y-1/2 text-gray-300 text-xs" />
                 <input
                   type="text"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  placeholder="Search..."
-                  className="pl-6 pr-2 py-1 text-[11px] text-gray-700 bg-white border border-gray-200 rounded-md outline-none focus:border-gray-400 transition-all placeholder:text-gray-300 w-24"
+                  placeholder="Search…"
+                  className="pl-7 pr-7 py-1.5 text-[11px] text-gray-700 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-gray-400 focus:bg-white transition-all placeholder:text-gray-300 w-32"
                 />
+                {search && (
+                  <button
+                    onClick={() => setSearch("")}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-300 hover:text-gray-600 cursor-pointer transition-colors"
+                  >
+                    <HiX className="text-xs" />
+                  </button>
+                )}
               </div>
-              <div className="flex items-center gap-1.5">
-                <span className="text-[10px] text-gray-400">Aa</span>
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] text-gray-400 font-jetMono">Aa</span>
                 <input
                   type="range"
                   min={16}
                   max={48}
                   value={size}
                   onChange={(e) => setSize(Number(e.target.value))}
-                  className="w-14 accent-gray-900"
+                  className="w-16 accent-gray-900 cursor-pointer"
                 />
-                <span className="text-[10px] text-gray-400 w-7 tabular-nums">
+                <span className="text-[10px] text-gray-400 w-6 tabular-nums text-right font-jetMono">
                   {size}
                 </span>
               </div>
@@ -197,20 +246,31 @@ const FontPage = () => {
         </div>
       </div>
 
-      <p className="text-[10px] text-gray-300 mb-1">
-        {visible.length} result{visible.length !== 1 ? "s" : ""}
-      </p>
+      {/* Results count */}
+      <div className="flex items-center justify-between mb-4 px-1">
+        <p className="text-[11px] text-gray-400 font-jetMono">
+          {visible.length} result{visible.length !== 1 ? "s" : ""}
+        </p>
+      </div>
 
-      <div className="flex flex-col">
+      {/* Font grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {visible.map((name) => (
-          <FontCard key={name} name={name} text={text || "The quick brown fox"} size={size} onClick={() => navigate(`/fonts/${encodeURIComponent(name)}`)} />
+          <FontCard
+            key={name}
+            name={name}
+            text={text || "The quick brown fox"}
+            size={size}
+            onClick={() => navigate(`/fonts/${encodeURIComponent(name)}`)}
+          />
         ))}
       </div>
 
       {visible.length === 0 && (
-        <p className="text-center text-gray-300 text-sm py-20">
-          No fonts found.
-        </p>
+        <div className="text-center py-24">
+          <p className="text-gray-400 text-lg font-poppins mb-2">No fonts found</p>
+          <p className="text-gray-300 text-sm">Try a different search or filter</p>
+        </div>
       )}
     </div>
   );
