@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MdContentCopy, MdCheck } from 'react-icons/md';
+import { MdCheck } from 'react-icons/md';
 import LogoDark from '../assets/logo-dark.svg';
 import LogoLight from '../assets/logo.svg';
 
