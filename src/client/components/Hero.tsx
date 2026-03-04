@@ -67,7 +67,7 @@ const PromoVideo = () => {
           loop
           playsInline
           className="w-full h-auto"
-          src="/kern-video.mp4"
+          src="/kern-video-v2.mp4"
         />
       </div>
     </div>

@@ -49,8 +49,14 @@ export const CodeSnippet: React.FC = () => {
         extrapolateRight: "clamp",
     });
 
-    // Exit fade
-    const exitOpacity = interpolate(frame, [80, 90], [1, 0], {
+    // Second success line appears at frame 85
+    const doneOpacity = interpolate(frame, [85, 92], [0, 1], {
+        extrapolateLeft: "clamp",
+        extrapolateRight: "clamp",
+    });
+
+    // Exit fade (extended for 105 frame duration)
+    const exitOpacity = interpolate(frame, [92, 105], [1, 0], {
         extrapolateLeft: "clamp",
         extrapolateRight: "clamp",
     });
@@ -227,6 +233,25 @@ export const CodeSnippet: React.FC = () => {
                         >
                             <span>✓</span>
                             <span>Component installed successfully</span>
+                        </div>
+                    )}
+
+                    {/* Second success line */}
+                    {typingDone && (
+                        <div
+                            style={{
+                                marginTop: 8,
+                                fontFamily: "'JetBrains Mono', monospace",
+                                fontSize: 13,
+                                color: "#737373",
+                                opacity: doneOpacity,
+                                display: "flex",
+                                alignItems: "center",
+                                gap: 8,
+                            }}
+                        >
+                            <span>⏱</span>
+                            <span>Done in 1.2s</span>
                         </div>
                     )}
                 </div>

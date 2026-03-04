@@ -42,12 +42,27 @@ export const LogoReveal: React.FC = () => {
     );
 
     // Subtle gradient background shift
-    const gradientAngle = interpolate(frame, [0, 90], [120, 200]);
+    const gradientAngle = interpolate(frame, [0, 105], [120, 200]);
 
-    // Exit fade
-    const exitOpacity = interpolate(frame, [75, 90], [1, 0], {
+    // Exit fade (extended for 105 frame duration)
+    const exitOpacity = interpolate(frame, [85, 105], [1, 0], {
         extrapolateLeft: "clamp",
         extrapolateRight: "clamp",
+    });
+
+    // Floating particles
+    const particles = Array.from({ length: 12 }, (_, i) => {
+        const speed = 0.3 + (i % 4) * 0.15;
+        const xBase = 150 + (i * 147) % 1620;
+        const yBase = 100 + (i * 89) % 880;
+        const size = 2 + (i % 3) * 1.5;
+        const particleOpacity = interpolate(
+            frame,
+            [10 + i * 3, 30 + i * 3],
+            [0, 0.15 + (i % 3) * 0.1],
+            { extrapolateRight: "clamp" }
+        );
+        return { xBase, yBase, speed, size, particleOpacity };
     });
 
     // Total stroke length for each path (approximate)
@@ -63,6 +78,24 @@ export const LogoReveal: React.FC = () => {
                 opacity: exitOpacity,
             }}
         >
+            {/* Floating particles */}
+            {particles.map((p, i) => (
+                <div
+                    key={i}
+                    style={{
+                        position: "absolute",
+                        left: p.xBase,
+                        top: p.yBase - frame * p.speed,
+                        width: p.size,
+                        height: p.size,
+                        borderRadius: "50%",
+                        background: i % 2 === 0 ? "rgba(37,99,235,0.6)" : "rgba(124,58,237,0.6)",
+                        opacity: p.particleOpacity * exitOpacity,
+                        filter: `blur(${p.size > 3 ? 1 : 0}px)`,
+                    }}
+                />
+            ))}
+
             {/* Radial glow behind logo */}
             <div
                 style={{
