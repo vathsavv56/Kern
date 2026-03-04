@@ -21,11 +21,10 @@ const NavBar4 = () => {
               <a
                 key={link}
                 href="#"
-                className={`text-sm tracking-wide transition-colors duration-200 relative pb-1 ${
-                  i === 0
-                    ? "text-gray-900 border-b border-gray-900"
-                    : "text-gray-400 hover:text-gray-900 border-b border-transparent hover:border-gray-900"
-                }`}
+                className={`text-sm tracking-wide transition-colors duration-200 relative pb-1 ${i === 0
+                  ? "text-gray-900 border-b border-gray-900"
+                  : "text-gray-400 hover:text-gray-900 border-b border-transparent hover:border-gray-900"
+                  }`}
               >
                 {link}
               </a>
@@ -52,20 +51,18 @@ const NavBar4 = () => {
       </div>
 
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
-          open ? "max-h-72" : "max-h-0"
-        }`}
+        className={`md:hidden overflow-hidden transition-all duration-300 ${open ? "max-h-72" : "max-h-0"
+          }`}
       >
         <div className="px-4 pb-6 pt-2 flex flex-col gap-0 bg-white border-t border-gray-100">
           {links.map((link, i) => (
             <a
               key={link}
               href="#"
-              className={`px-2 py-3 text-sm tracking-wide border-b border-gray-100 transition-colors ${
-                i === 0
-                  ? "text-gray-900 font-medium"
-                  : "text-gray-400 hover:text-gray-900"
-              }`}
+              className={`px-2 py-3 text-sm tracking-wide border-b border-gray-100 transition-colors ${i === 0
+                ? "text-gray-900 font-medium"
+                : "text-gray-400 hover:text-gray-900"
+                }`}
             >
               {link}
             </a>

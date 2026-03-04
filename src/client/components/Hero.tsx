@@ -15,6 +15,7 @@ const Hero = () => {
     <div className="max-w-6xl mx-auto min-h-screen flex flex-col gap-16 text-center items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 pb-16 sm:pb-20 ">
       <Cta />
       <Header />
+      <PromoVideo />
       <Icons />
       <HeroShowcase />
       <Features />
@@ -52,6 +53,23 @@ const Header = () => {
         Build stunning user interfaces with elegantly designed components and
         hand picked fonts
       </p>
+    </div>
+  );
+};
+
+const PromoVideo = () => {
+  return (
+    <div className="w-full max-w-4xl mx-auto">
+      <div className="relative rounded-2xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 bg-black">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-auto"
+          src="/kern-video.mp4"
+        />
+      </div>
     </div>
   );
 };
