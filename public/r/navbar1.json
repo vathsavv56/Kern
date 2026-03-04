@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "navbar1",
+  "type": "registry:component",
+  "title": "NavBar1",
+  "description": "Kern UI NavBar1 component",
+  "dependencies": [
+    "react-icons/hi"
+  ],
+  "files": [
+    {
+      "path": "navbar1.tsx",
+      "content": "import { useState } from \"react\";\r\nimport { HiMenu, HiX } from \"react-icons/hi\";\r\n\r\nconst NavBar1 = () => {\r\n  const [open, setOpen] = useState(false);\r\n\r\n  const links = [\"Home\", \"About\", \"Services\", \"Portfolio\", \"Contact\"];\r\n\r\n  return (\r\n    <nav className=\"w-full bg-white shadow-md\">\r\n      <div className=\"px-4 sm:px-6\">\r\n        <div className=\"flex items-center justify-between h-16\">\r\n          <div className=\"flex-shrink-0\">\r\n            <span className=\"text-2xl font-bold text-gray-900 tracking-tight\">\r\n              Brand<span className=\"text-blue-600\">.</span>\r\n            </span>\r\n          </div>\r\n\r\n          <div className=\"hidden md:flex items-center gap-8\">\r\n            {links.map((link) => (\r\n              <a\r\n                key={link}\r\n                href=\"#\"\r\n                className=\"text-gray-600 hover:text-gray-900 text-sm font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full\"\r\n              >\r\n                {link}\r\n              </a>\r\n            ))}\r\n          </div>\r\n\r\n          <div className=\"hidden md:block\">\r\n            <button className=\"bg-blue-600 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200 cursor-pointer\">\r\n              Get Started\r\n            </button>\r\n          </div>\r\n\r\n          <button\r\n            className=\"md:hidden text-gray-700 text-2xl cursor-pointer\"\r\n            onClick={() => setOpen(!open)}\r\n          >\r\n            {open ? <HiX /> : <HiMenu />}\r\n          </button>\r\n        </div>\r\n      </div>\r\n\r\n      <div\r\n        className={`md:hidden overflow-hidden transition-all duration-300 ${open ? \"max-h-80\" : \"max-h-0\"\r\n          }`}\r\n      >\r\n        <div className=\"px-4 pb-4 pt-2 flex flex-col gap-2 bg-white border-t border-gray-100\">\r\n          {links.map((link) => (\r\n            <a\r\n              key={link}\r\n              href=\"#\"\r\n              className=\"text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-3 py-2 rounded-md text-sm font-medium transition-colors\"\r\n            >\r\n              {link}\r\n            </a>\r\n          ))}\r\n          <button className=\"mt-2 bg-blue-600 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors cursor-pointer\">\r\n            Get Started\r\n          </button>\r\n        </div>\r\n      </div>\r\n    </nav>\r\n  );\r\n};\r\n\r\nexport default NavBar1;",
+      "type": "registry:component",
+      "target": "components/kern/NavBar1.tsx"
+    }
+  ]
+}

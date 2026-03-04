@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button5",
+  "type": "registry:component",
+  "title": "Button5",
+  "description": "Kern UI Button5 component",
+  "dependencies": [
+    "react-icons/fi"
+  ],
+  "files": [
+    {
+      "path": "button5.tsx",
+      "content": "import { useState } from \"react\";\r\nimport { FiCheck, FiLoader } from \"react-icons/fi\";\r\n\r\nconst Button5 = () => {\r\n    const [loading, setLoading] = useState(false);\r\n    const [done, setDone] = useState(false);\r\n\r\n    const handleClick = () => {\r\n        setLoading(true);\r\n        setDone(false);\r\n        setTimeout(() => {\r\n            setLoading(false);\r\n            setDone(true);\r\n            setTimeout(() => setDone(false), 2000);\r\n        }, 1500);\r\n    };\r\n\r\n    return (\r\n        <div className=\"w-full p-6 flex flex-wrap items-center gap-3\">\r\n            <button\r\n                onClick={handleClick}\r\n                disabled={loading}\r\n                className={`flex items-center gap-2 px-5 py-2 text-sm font-medium rounded-lg transition-all duration-300 cursor-pointer ${done\r\n                        ? \"bg-emerald-500 text-white\"\r\n                        : loading\r\n                            ? \"bg-gray-200 text-gray-500 cursor-not-allowed\"\r\n                            : \"bg-gray-900 text-white hover:bg-gray-700\"\r\n                    }`}\r\n            >\r\n                {done ? (\r\n                    <>\r\n                        <FiCheck className=\"text-sm\" /> Done\r\n                    </>\r\n                ) : loading ? (\r\n                    <>\r\n                        <FiLoader className=\"text-sm animate-spin\" /> Loading...\r\n                    </>\r\n                ) : (\r\n                    \"Submit\"\r\n                )}\r\n            </button>\r\n\r\n            <button className=\"px-5 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-700 hover:scale-105 active:scale-95 transition-all cursor-pointer\">\r\n                Scale Effect\r\n            </button>\r\n\r\n            <button className=\"relative px-5 py-2 text-sm font-medium text-gray-900 overflow-hidden group cursor-pointer\">\r\n                <span className=\"relative z-10\">Hover Fill</span>\r\n                <span className=\"absolute inset-0 bg-gray-900 rounded-lg scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300\" />\r\n                <span className=\"absolute inset-0 z-10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300\">\r\n                    Hover Fill\r\n                </span>\r\n            </button>\r\n        </div>\r\n    );\r\n};\r\n\r\nexport default Button5;\r\n",
+      "type": "registry:component",
+      "target": "components/kern/Button5.tsx"
+    }
+  ]
+}

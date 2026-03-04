@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea",
+  "type": "registry:component",
+  "title": "TextArea",
+  "description": "Kern UI TextArea component",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "textarea.tsx",
+      "content": "import { useState } from \"react\";\r\n\r\nconst TextArea = () => {\r\n  const [value, setValue] = useState(\"\");\r\n  const maxLength = 500;\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xl mx-auto p-6\">\r\n      <label className=\"block text-sm font-medium text-gray-700 mb-1.5\">\r\n        Message\r\n      </label>\r\n      <div className=\"relative\">\r\n        <textarea\r\n          value={value}\r\n          onChange={(e) => setValue(e.target.value)}\r\n          maxLength={maxLength}\r\n          rows={5}\r\n          placeholder=\"Write something...\"\r\n          className=\"w-full px-4 py-3 text-sm text-gray-900 bg-gray-50 border border-gray-200 rounded-xl resize-none outline-none transition-all duration-200 focus:bg-white focus:border-gray-400 focus:ring-2 focus:ring-gray-100 placeholder:text-gray-300\"\r\n        />\r\n      </div>\r\n      <div className=\"flex items-center justify-between mt-2 px-1\">\r\n        <p className=\"text-xs text-gray-400\">\r\n          {value.length > 0 ? `${value.length} / ${maxLength}` : \"No character limit concerns\"}\r\n        </p>\r\n        <button\r\n          className={`text-xs font-medium px-3 py-1 rounded-lg transition-all duration-200 cursor-pointer ${value.length > 0\r\n              ? \"bg-gray-900 text-white hover:bg-gray-700\"\r\n              : \"bg-gray-100 text-gray-300 cursor-not-allowed\"\r\n            }`}\r\n          disabled={value.length === 0}\r\n          onClick={() => setValue(\"\")}\r\n        >\r\n          Clear\r\n        </button>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default TextArea;\r\n",
+      "type": "registry:component",
+      "target": "components/kern/TextArea.tsx"
+    }
+  ]
+}

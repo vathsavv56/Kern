@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toast",
+  "type": "registry:component",
+  "title": "Toast",
+  "description": "Kern UI Toast component",
+  "dependencies": [
+    "react-icons/md",
+    "react-icons/fa"
+  ],
+  "files": [
+    {
+      "path": "toast.tsx",
+      "content": "import { cn } from \"../../cn\";\r\nimport { MdError } from \"react-icons/md\";\r\nimport { FaCheckCircle } from \"react-icons/fa\";\r\n\r\ninterface ToastProps {\r\n  message: string;\r\n  status: boolean;\r\n}\r\n\r\nconst Toast = ({ message, status }: ToastProps) => {\r\n\r\n  const Icon = status ? FaCheckCircle : MdError;\r\n  const accentColor = status ? \"before:bg-green-500\" : \"before:bg-red-500\";\r\n  const iconColor = status ? \"text-green-500\" : \"text-red-500\"; \r\n\r\n  return (\r\n    <div\r\n      className={cn(\r\n        \r\n        \"h-12 w-fit px-4 shadow bg-white relative overflow-hidden\",\r\n        \"flex items-center\",\r\n        \"before:absolute before:top-0 before:left-0 before:h-full before:w-2\",\r\n        accentColor\r\n      )}\r\n    >\r\n      <p className=\"flex items-center gap-2 text-black font-medium\">\r\n        <Icon className={cn(\"text-lg\", iconColor)} />\r\n        {message}\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Toast;",
+      "type": "registry:component",
+      "target": "components/kern/Toast.tsx"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "navbar2",
+  "type": "registry:component",
+  "title": "NavBar2",
+  "description": "Kern UI NavBar2 component",
+  "dependencies": [
+    "react-icons/hi"
+  ],
+  "files": [
+    {
+      "path": "navbar2.tsx",
+      "content": "import { useState } from \"react\";\r\nimport { HiMenu, HiX } from \"react-icons/hi\";\r\n\r\nconst NavBar2 = () => {\r\n  const [open, setOpen] = useState(false);\r\n\r\n  const leftLinks = [\"Home\", \"About\", \"Services\"];\r\n  const rightLinks = [\"Blog\", \"Careers\", \"Contact\"];\r\n\r\n  return (\r\n    <nav className=\"w-full bg-gray-900 border-b-2 border-amber-400\">\r\n      <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\r\n        <div className=\"flex items-center justify-between h-16 md:justify-center md:gap-0\">\r\n          {/* Left Links (desktop) */}\r\n          <div className=\"hidden md:flex items-center gap-6 flex-1 justify-end pr-10\">\r\n            {leftLinks.map((link) => (\r\n              <a\r\n                key={link}\r\n                href=\"#\"\r\n                className=\"text-gray-300 hover:text-white text-sm font-medium tracking-wide transition-colors duration-200\"\r\n              >\r\n                {link}\r\n              </a>\r\n            ))}\r\n          </div>\r\n\r\n          {/* Center Logo */}\r\n          <div className=\"flex-shrink-0\">\r\n            <span className=\"text-2xl font-bold text-white tracking-widest uppercase\">\r\n              Luxe\r\n            </span>\r\n          </div>\r\n\r\n          {/* Right Links (desktop) */}\r\n          <div className=\"hidden md:flex items-center gap-6 flex-1 pl-10\">\r\n            {rightLinks.map((link) => (\r\n              <a\r\n                key={link}\r\n                href=\"#\"\r\n                className=\"text-gray-300 hover:text-white text-sm font-medium tracking-wide transition-colors duration-200\"\r\n              >\r\n                {link}\r\n              </a>\r\n            ))}\r\n          </div>\r\n\r\n          {/* Mobile Hamburger */}\r\n          <button\r\n            className=\"md:hidden text-white text-2xl cursor-pointer\"\r\n            onClick={() => setOpen(!open)}\r\n          >\r\n            {open ? <HiX /> : <HiMenu />}\r\n          </button>\r\n        </div>\r\n      </div>\r\n\r\n      {/* Mobile Menu */}\r\n      <div\r\n        className={`md:hidden overflow-hidden transition-all duration-300 ${open ? \"max-h-96\" : \"max-h-0\"\r\n          }`}\r\n      >\r\n        <div className=\"px-4 pb-4 pt-2 flex flex-col gap-1 bg-gray-900 border-t border-gray-800\">\r\n          {[...leftLinks, ...rightLinks].map((link) => (\r\n            <a\r\n              key={link}\r\n              href=\"#\"\r\n              className=\"text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2.5 rounded-md text-sm font-medium transition-colors\"\r\n            >\r\n              {link}\r\n            </a>\r\n          ))}\r\n        </div>\r\n      </div>\r\n    </nav>\r\n  );\r\n};\r\n\r\nexport default NavBar2;",
+      "type": "registry:component",
+      "target": "components/kern/NavBar2.tsx"
+    }
+  ]
+}

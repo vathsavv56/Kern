@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button3",
+  "type": "registry:component",
+  "title": "Button3",
+  "description": "Kern UI Button3 component",
+  "dependencies": [
+    "react-icons/fi",
+    "react-icons/fa"
+  ],
+  "files": [
+    {
+      "path": "button3.tsx",
+      "content": "import { FiGithub, FiMail } from \"react-icons/fi\";\r\nimport { FaGoogle, FaApple } from \"react-icons/fa\";\r\n\r\nconst Button3 = () => {\r\n    return (\r\n        <div className=\"w-full p-6 flex flex-col gap-3 max-w-xs\">\r\n            <button className=\"flex items-center justify-center gap-2 w-full py-2.5 bg-[#24292e] text-white text-sm font-medium rounded-lg hover:bg-[#1a1e22] transition-colors cursor-pointer\">\r\n                <FiGithub className=\"text-base\" /> Continue with GitHub\r\n            </button>\r\n            <button className=\"flex items-center justify-center gap-2 w-full py-2.5 bg-white text-gray-700 text-sm font-medium rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors cursor-pointer\">\r\n                <FaGoogle className=\"text-base text-[#4285F4]\" /> Continue with Google\r\n            </button>\r\n            <button className=\"flex items-center justify-center gap-2 w-full py-2.5 bg-black text-white text-sm font-medium rounded-lg hover:bg-gray-900 transition-colors cursor-pointer\">\r\n                <FaApple className=\"text-base\" /> Continue with Apple\r\n            </button>\r\n            <div className=\"flex items-center gap-3 my-1\">\r\n                <span className=\"flex-1 h-px bg-gray-200\" />\r\n                <span className=\"text-xs text-gray-400\">or</span>\r\n                <span className=\"flex-1 h-px bg-gray-200\" />\r\n            </div>\r\n            <button className=\"flex items-center justify-center gap-2 w-full py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors cursor-pointer\">\r\n                <FiMail className=\"text-base\" /> Sign up with Email\r\n            </button>\r\n        </div>\r\n    );\r\n};\r\n\r\nexport default Button3;\r\n",
+      "type": "registry:component",
+      "target": "components/kern/Button3.tsx"
+    }
+  ]
+}

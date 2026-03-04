@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button4",
+  "type": "registry:component",
+  "title": "Button4",
+  "description": "Kern UI Button4 component",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "button4.tsx",
+      "content": "const Button4 = () => {\r\n    return (\r\n        <div className=\"w-full p-6 flex flex-col gap-4\">\r\n            <div className=\"flex flex-wrap items-center gap-3\">\r\n                <button className=\"px-3 py-1 bg-gray-900 text-white text-xs font-medium rounded-md hover:bg-gray-700 transition-colors cursor-pointer\">\r\n                    Small\r\n                </button>\r\n                <button className=\"px-5 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors cursor-pointer\">\r\n                    Medium\r\n                </button>\r\n                <button className=\"px-7 py-3 bg-gray-900 text-white text-base font-medium rounded-xl hover:bg-gray-700 transition-colors cursor-pointer\">\r\n                    Large\r\n                </button>\r\n            </div>\r\n            <button className=\"w-full py-3 bg-gray-900 text-white text-sm font-medium rounded-xl hover:bg-gray-700 transition-colors cursor-pointer\">\r\n                Full Width\r\n            </button>\r\n        </div>\r\n    );\r\n};\r\n\r\nexport default Button4;\r\n",
+      "type": "registry:component",
+      "target": "components/kern/Button4.tsx"
+    }
+  ]
+}

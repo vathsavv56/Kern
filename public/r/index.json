@@ -1,0 +1,219 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "kern-ui",
+  "homepage": "https://kern-ui.com",
+  "items": [
+    {
+      "name": "avatar",
+      "type": "registry:component",
+      "description": "Kern UI Avatar component",
+      "dependencies": [],
+      "files": [
+        "avatar.tsx"
+      ]
+    },
+    {
+      "name": "button1",
+      "type": "registry:component",
+      "description": "Kern UI Button1 component",
+      "dependencies": [],
+      "files": [
+        "button1.tsx"
+      ]
+    },
+    {
+      "name": "button2",
+      "type": "registry:component",
+      "description": "Kern UI Button2 component",
+      "dependencies": [
+        "react-icons/fi"
+      ],
+      "files": [
+        "button2.tsx"
+      ]
+    },
+    {
+      "name": "button3",
+      "type": "registry:component",
+      "description": "Kern UI Button3 component",
+      "dependencies": [
+        "react-icons/fi",
+        "react-icons/fa"
+      ],
+      "files": [
+        "button3.tsx"
+      ]
+    },
+    {
+      "name": "button4",
+      "type": "registry:component",
+      "description": "Kern UI Button4 component",
+      "dependencies": [],
+      "files": [
+        "button4.tsx"
+      ]
+    },
+    {
+      "name": "button5",
+      "type": "registry:component",
+      "description": "Kern UI Button5 component",
+      "dependencies": [
+        "react-icons/fi"
+      ],
+      "files": [
+        "button5.tsx"
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:component",
+      "description": "Kern UI Card component",
+      "dependencies": [
+        "react-icons/fi"
+      ],
+      "files": [
+        "card.tsx"
+      ]
+    },
+    {
+      "name": "fontdemo",
+      "type": "registry:component",
+      "description": "Kern UI FontDemo component",
+      "dependencies": [],
+      "files": [
+        "fontdemo.tsx"
+      ]
+    },
+    {
+      "name": "githubheatmap",
+      "type": "registry:component",
+      "description": "Kern UI GithubHeatMap component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        "githubheatmap.tsx"
+      ]
+    },
+    {
+      "name": "navbar1",
+      "type": "registry:component",
+      "description": "Kern UI NavBar1 component",
+      "dependencies": [
+        "react-icons/hi"
+      ],
+      "files": [
+        "navbar1.tsx"
+      ]
+    },
+    {
+      "name": "navbar2",
+      "type": "registry:component",
+      "description": "Kern UI NavBar2 component",
+      "dependencies": [
+        "react-icons/hi"
+      ],
+      "files": [
+        "navbar2.tsx"
+      ]
+    },
+    {
+      "name": "navbar3",
+      "type": "registry:component",
+      "description": "Kern UI NavBar3 component",
+      "dependencies": [
+        "react-icons/hi"
+      ],
+      "files": [
+        "navbar3.tsx"
+      ]
+    },
+    {
+      "name": "navbar4",
+      "type": "registry:component",
+      "description": "Kern UI NavBar4 component",
+      "dependencies": [
+        "react-icons/hi"
+      ],
+      "files": [
+        "navbar4.tsx"
+      ]
+    },
+    {
+      "name": "navbar5",
+      "type": "registry:component",
+      "description": "Kern UI NavBar5 component",
+      "dependencies": [
+        "react-icons/hi",
+        "react-icons/fi"
+      ],
+      "files": [
+        "navbar5.tsx"
+      ]
+    },
+    {
+      "name": "navmenu",
+      "type": "registry:component",
+      "description": "Kern UI NavMenu component",
+      "dependencies": [
+        "react-router",
+        "react-icons/io"
+      ],
+      "files": [
+        "navmenu.tsx"
+      ]
+    },
+    {
+      "name": "navshowcase",
+      "type": "registry:component",
+      "description": "Kern UI NavShowCase component",
+      "dependencies": [
+        "react-icons/md"
+      ],
+      "files": [
+        "navshowcase.tsx"
+      ]
+    },
+    {
+      "name": "searchbar",
+      "type": "registry:component",
+      "description": "Kern UI SearchBar component",
+      "dependencies": [
+        "react-icons/hi"
+      ],
+      "files": [
+        "searchbar.tsx"
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:component",
+      "description": "Kern UI Spinner component",
+      "dependencies": [],
+      "files": [
+        "spinner.tsx"
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:component",
+      "description": "Kern UI TextArea component",
+      "dependencies": [],
+      "files": [
+        "textarea.tsx"
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:component",
+      "description": "Kern UI Toast component",
+      "dependencies": [
+        "react-icons/md",
+        "react-icons/fa"
+      ],
+      "files": [
+        "toast.tsx"
+      ]
+    }
+  ]
+}

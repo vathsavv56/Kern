@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "searchbar",
+  "type": "registry:component",
+  "title": "SearchBar",
+  "description": "Kern UI SearchBar component",
+  "dependencies": [
+    "react-icons/hi"
+  ],
+  "files": [
+    {
+      "path": "searchbar.tsx",
+      "content": "import { useState } from \"react\";\r\nimport { HiSearch, HiX } from \"react-icons/hi\";\r\n\r\nconst suggestions = [\"Dashboard\", \"Settings\", \"Profile\", \"Analytics\", \"Notifications\", \"Billing\"];\r\n\r\nconst SearchBar = () => {\r\n  const [query, setQuery] = useState(\"\");\r\n  const [focused, setFocused] = useState(false);\r\n\r\n  const filtered = query.length > 0\r\n    ? suggestions.filter((s) => s.toLowerCase().includes(query.toLowerCase()))\r\n    : [];\r\n\r\n  return (\r\n    <div className=\"w-full max-w-md mx-auto p-6\">\r\n      <p className=\"text-xs font-medium text-gray-400 uppercase tracking-wider mb-4\">\r\n        Search Input\r\n      </p>\r\n      <div className=\"relative\">\r\n        <HiSearch className=\"absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm\" />\r\n        <input\r\n          type=\"text\"\r\n          value={query}\r\n          onChange={(e) => setQuery(e.target.value)}\r\n          onFocus={() => setFocused(true)}\r\n          onBlur={() => setTimeout(() => setFocused(false), 150)}\r\n          placeholder=\"Search...\"\r\n          className=\"w-full pl-10 pr-10 py-2.5 text-sm text-gray-900 bg-gray-50 border border-gray-200 rounded-xl outline-none transition-all duration-200 focus:bg-white focus:border-gray-400 focus:ring-2 focus:ring-gray-100 placeholder:text-gray-300\"\r\n        />\r\n        {query.length > 0 && (\r\n          <button\r\n            onClick={() => setQuery(\"\")}\r\n            className=\"absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 cursor-pointer transition-colors\"\r\n          >\r\n            <HiX className=\"text-sm\" />\r\n          </button>\r\n        )}\r\n\r\n        {focused && filtered.length > 0 && (\r\n          <div className=\"absolute top-full left-0 right-0 mt-1.5 bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden z-10\">\r\n            {filtered.map((item) => (\r\n              <button\r\n                key={item}\r\n                onMouseDown={() => {\r\n                  setQuery(item);\r\n                  setFocused(false);\r\n                }}\r\n                className=\"w-full text-left px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors cursor-pointer flex items-center gap-2\"\r\n              >\r\n                <HiSearch className=\"text-xs text-gray-300\" />\r\n                {item}\r\n              </button>\r\n            ))}\r\n          </div>\r\n        )}\r\n      </div>\r\n\r\n      {query.length === 0 && (\r\n        <p className=\"text-xs text-gray-300 mt-2 px-1\">\r\n          Try typing \"dash\" or \"set\"\r\n        </p>\r\n      )}\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default SearchBar;",
+      "type": "registry:component",
+      "target": "components/kern/SearchBar.tsx"
+    }
+  ]
+}

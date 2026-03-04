@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "navmenu",
+  "type": "registry:component",
+  "title": "NavMenu",
+  "description": "Kern UI NavMenu component",
+  "dependencies": [
+    "react-router",
+    "react-icons/io"
+  ],
+  "files": [
+    {
+      "path": "navmenu.tsx",
+      "content": "import { NavLink, Outlet, useNavigate } from \"react-router\";\r\nimport { IoIosArrowBack, IoIosArrowForward } from \"react-icons/io\";\r\n\r\nconst navLinks = [\r\n  { to: \"navbar1\", name: \"Navtype1\" },\r\n  { to: \"navbar2\", name: \"Navtype2\" },\r\n  { to: \"navbar3\", name: \"Navtype3\" },\r\n  { to: \"navbar4\", name: \"Navtype4\" },\r\n  { to: \"navbar5\", name: \"Navtype5\" },\r\n];\r\n\r\nconst NavMenu = () => {\r\n  const navigate = useNavigate();\r\n  return (\r\n    <div className=\"flex items-center gap-6 sm:gap-10 flex-col w-full px-4 sm:px-6\">\r\n      <div className=\"w-full max-w-5xl mx-auto p-4 sm:p-6 md:p-10 flex flex-col justify-center gap-5 text-white bg-gray-800 rounded-xl\">\r\n        <button\r\n          className=\"bg-white text-black rounded-xl cursor-pointer px-3 py-1.5 flex items-center gap-1 hover:scale-105 transition-transform w-fit text-sm\"\r\n          onClick={() => navigate(\"/components\")}\r\n        >\r\n          <IoIosArrowBack /> Go back\r\n        </button>\r\n        <h3 className=\"hover:underline hover:underline-offset-4 cursor-pointer text-xl\">\r\n          NavBars menu:\r\n        </h3>\r\n        <div className=\"flex flex-wrap gap-2 mt-2\">\r\n          {navLinks.map((item, index) => (\r\n            <NavLink\r\n              to={item.to}\r\n              key={index}\r\n              className={({ isActive }) =>\r\n                `px-4 py-2 rounded-lg transition-all duration-300 w-fit hover:rounded-2xl text-sm ${isActive ? \"bg-blue-700\" : \"bg-blue-500\"\r\n                }`\r\n              }\r\n            >\r\n              <p className=\"flex items-center gap-2\">\r\n                {item.name} <IoIosArrowForward />\r\n              </p>\r\n            </NavLink>\r\n          ))}\r\n        </div>\r\n      </div>\r\n      <div className=\"w-full\">\r\n        <Outlet />\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default NavMenu;",
+      "type": "registry:component",
+      "target": "components/kern/NavMenu.tsx"
+    }
+  ]
+}

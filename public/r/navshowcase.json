@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "navshowcase",
+  "type": "registry:component",
+  "title": "NavShowCase",
+  "description": "Kern UI NavShowCase component",
+  "dependencies": [
+    "react-icons/md"
+  ],
+  "files": [
+    {
+      "path": "navshowcase.tsx",
+      "content": "import { MdCopyAll } from \"react-icons/md\";\r\nimport { useState } from \"react\";\r\nimport Toast from \"../Toast\";\r\n\r\ninterface NavShowCaseProps {\r\n  Component: React.ReactNode;\r\n  para: string;\r\n  heading: string;\r\n  code: string;\r\n  requirements: string;\r\n}\r\n\r\nconst NavShowCase = ({\r\n  Component,\r\n  para = \"This is para test\",\r\n  heading = \"This is test heading\",\r\n  code = \"This is test code\",\r\n  requirements = \"These are test requirements\",\r\n}: NavShowCaseProps) => {\r\n  const [copy, setCopy] = useState(false);\r\n\r\n  const handleCopy = () => {\r\n    navigator.clipboard.writeText(code);\r\n    setCopy(true);\r\n    setTimeout(() => {\r\n      setCopy(false);\r\n    }, 3000);\r\n  };\r\n\r\n  return (\r\n    <div className=\"h-fit w-full max-w-5xl mx-auto p-4 sm:p-6 md:p-10 flex flex-col gap-4 sm:gap-5 text-white bg-gray-800 rounded-xl relative overflow-hidden\">\r\n      <div>\r\n        <h3 className=\"text-xl sm:text-2xl font-bold mb-2 sm:mb-3 tracking-tighter hover:underline hover:underline-offset-4 duration-300 cursor-pointer\">\r\n          {heading}\r\n        </h3>\r\n        <p className=\"mb-2 sm:mb-3 tracking-tighter text-sm sm:text-base\">{para}</p>\r\n        <div className=\"mb-3\">\r\n          <h3 className=\"hover:underline hover:underline-offset-4 w-fit cursor-pointer text-sm sm:text-base\">\r\n            Requirements :\r\n          </h3>\r\n          <p className=\"text-sm sm:text-base\">{requirements}</p>\r\n        </div>\r\n        <div className=\"overflow-x-auto rounded-lg\">\r\n          {Component}\r\n        </div>\r\n\r\n        <pre className=\"bg-pink-200 text-black p-3 rounded-lg w-full relative overflow-x-auto text-xs sm:text-sm mt-4\">\r\n          <code>\r\n            <MdCopyAll\r\n              className=\"absolute right-3 top-3 text-2xl p-1 hover:bg-gray-50 hover:text-black hover:rounded-full cursor-pointer\"\r\n              onClick={handleCopy}\r\n            />\r\n            {code}\r\n          </code>\r\n        </pre>\r\n      </div>\r\n      <div className=\"fixed bottom-4 left-4 z-50\">\r\n        {copy && <Toast status={true} message=\"Copied succesfully\" />}\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default NavShowCase;\r\n",
+      "type": "registry:component",
+      "target": "components/kern/NavShowCase.tsx"
+    }
+  ]
+}

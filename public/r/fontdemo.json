@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fontdemo",
+  "type": "registry:component",
+  "title": "FontDemo",
+  "description": "Kern UI FontDemo component",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "fontdemo.tsx",
+      "content": "\r\nconst FontDemo = () => {\r\n  return (\r\n    <div>FontDemo</div>\r\n  )\r\n}\r\n\r\nexport default FontDemo",
+      "type": "registry:component",
+      "target": "components/kern/FontDemo.tsx"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button2",
+  "type": "registry:component",
+  "title": "Button2",
+  "description": "Kern UI Button2 component",
+  "dependencies": [
+    "react-icons/fi"
+  ],
+  "files": [
+    {
+      "path": "button2.tsx",
+      "content": "import { FiPlus, FiDownload, FiTrash2, FiSend } from \"react-icons/fi\";\r\n\r\nconst Button2 = () => {\r\n    return (\r\n        <div className=\"w-full p-6 flex flex-wrap items-center gap-3\">\r\n            <button className=\"flex items-center gap-2 px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors cursor-pointer\">\r\n                <FiPlus className=\"text-sm\" /> Create\r\n            </button>\r\n            <button className=\"flex items-center gap-2 px-4 py-2 bg-white text-gray-700 text-sm font-medium rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors cursor-pointer\">\r\n                <FiDownload className=\"text-sm\" /> Download\r\n            </button>\r\n            <button className=\"flex items-center gap-2 px-4 py-2 text-red-600 text-sm font-medium rounded-lg hover:bg-red-50 transition-colors cursor-pointer\">\r\n                <FiTrash2 className=\"text-sm\" /> Delete\r\n            </button>\r\n            <button className=\"size-9 flex items-center justify-center bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors cursor-pointer\">\r\n                <FiSend className=\"text-sm\" />\r\n            </button>\r\n        </div>\r\n    );\r\n};\r\n\r\nexport default Button2;\r\n",
+      "type": "registry:component",
+      "target": "components/kern/Button2.tsx"
+    }
+  ]
+}

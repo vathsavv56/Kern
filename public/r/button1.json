@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button1",
+  "type": "registry:component",
+  "title": "Button1",
+  "description": "Kern UI Button1 component",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "button1.tsx",
+      "content": "const Button1 = () => {\r\n    return (\r\n        <div className=\"w-full p-6 flex flex-wrap items-center gap-3\">\r\n            <button className=\"px-5 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors cursor-pointer\">\r\n                Primary\r\n            </button>\r\n            <button className=\"px-5 py-2 bg-white text-gray-900 text-sm font-medium rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors cursor-pointer\">\r\n                Secondary\r\n            </button>\r\n            <button className=\"px-5 py-2 text-gray-600 text-sm font-medium rounded-lg hover:bg-gray-100 transition-colors cursor-pointer\">\r\n                Ghost\r\n            </button>\r\n            <button className=\"px-5 py-2 text-red-600 text-sm font-medium rounded-lg hover:bg-red-50 transition-colors cursor-pointer\">\r\n                Danger\r\n            </button>\r\n            <button className=\"px-5 py-2 bg-gray-100 text-gray-400 text-sm font-medium rounded-lg cursor-not-allowed\" disabled>\r\n                Disabled\r\n            </button>\r\n        </div>\r\n    );\r\n};\r\n\r\nexport default Button1;\r\n",
+      "type": "registry:component",
+      "target": "components/kern/Button1.tsx"
+    }
+  ]
+}
