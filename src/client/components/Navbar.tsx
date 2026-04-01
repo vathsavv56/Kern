@@ -16,6 +16,8 @@ const navItems: NavLinkItem[] = [
   { to: "/docs", name: "Usage" },
 ];
 
+const loadersUrl = "https://react-hello-loaders.vercel.app/";
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -41,7 +43,6 @@ const Navbar = () => {
             >
               Learn More →
             </Link>
-
           </p>
           <a
             href="https://github.com/vathsavv56/kern"
@@ -53,7 +54,6 @@ const Navbar = () => {
             <span>Star on GitHub</span>
           </a>
         </div>
-
       </div>
 
       {/* Main Navigation */}
@@ -62,7 +62,6 @@ const Navbar = () => {
         <NavLink to="/" onClick={handleLinkClick}>
           <img src={Kern} alt="Kern Logo" className="rounded-2xl h-10 w-auto" />
         </NavLink>
-
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-4">
@@ -74,13 +73,21 @@ const Navbar = () => {
                 cn(
                   "text-black hover:text-orange-400 transition-colors",
                   isActive &&
-                  "text-orange-500 font-medium underline underline-offset-4 decoration-orange-500",
+                    "text-orange-500 font-medium underline underline-offset-4 decoration-orange-500",
                 )
               }
             >
               {item.name}
             </NavLink>
           ))}
+          <a
+            href={loadersUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-black hover:text-orange-400 transition-colors"
+          >
+            Loaders
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -113,6 +120,15 @@ const Navbar = () => {
                   {item.name}
                 </NavLink>
               ))}
+              <a
+                href={loadersUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleLinkClick}
+                className="text-black hover:text-gray-400 w-full text-center py-2 rounded-md transition-colors"
+              >
+                Loaders
+              </a>
             </div>
           </div>
         )}
